@@ -37,7 +37,7 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@600;700;800&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet" />
 
 <!-- ===================== STRUCTURED DATA ===================== -->
 <script type="application/ld+json">
@@ -67,8 +67,8 @@
     --green:#4f9a2e; --green-d:#418126; --green-bright:#7aae50;
     --ink:#162b3b; --ink-soft:#46586a; --white:#fff;
     --tint-blue:#eef6fc; --tint-green:#f0f7e9; --line:#d8e4ec;
-    --display:"Urbanist","Inter",system-ui,sans-serif;
-    --body:"Inter",system-ui,-apple-system,sans-serif;
+    --display:"Urbanist","Source Sans 3",system-ui,sans-serif;
+    --body:"Source Sans 3",system-ui,-apple-system,sans-serif;
     --maxw:1200px; --pad:clamp(18px,4.5vw,60px); --radius:14px;
     --shadow:0 18px 40px -22px rgba(14,79,134,.42);
   }
@@ -1158,6 +1158,65 @@
     .svc:hover,.btn:hover{ transform:none; }
     .trust-track{ animation:none; }
   }
+
+
+  /* ===== 2026 editorial redesign ===== */
+  .text-arrow{display:inline-flex;margin-top:1rem;color:var(--green-d);font-weight:800;}
+  .hero-split{background:linear-gradient(118deg,var(--blue-ink),var(--blue-deep));}
+  .hero-grid{display:grid;grid-template-columns:minmax(0,1.02fr) minmax(380px,.98fr);gap:clamp(34px,6vw,76px);align-items:center;padding-block:clamp(56px,8vw,105px);}
+  .hero-copy{text-align:left;max-width:680px;}
+  .hero-copy h1{font-size:clamp(2.75rem,6.3vw,5.2rem);max-width:11ch;}
+  .hero-copy p.sub{font-size:clamp(1.08rem,1.6vw,1.25rem);}
+  .hero-photo{position:relative;border-radius:28px 8px 28px 8px;overflow:hidden;box-shadow:0 34px 70px -30px rgba(0,0,0,.7);min-height:480px;}
+  .hero-photo img{width:100%;height:100%;min-height:480px;object-fit:cover;}
+  .hero-photo-note{position:absolute;left:20px;right:20px;bottom:20px;padding:1rem 1.2rem;background:rgba(7,38,63,.86);border:1px solid rgba(255,255,255,.22);border-radius:12px;color:#fff;font-weight:700;backdrop-filter:blur(8px);}
+  .trust-ribbon{padding-block:0;}
+  .trust-stats{text-align:left;padding-block:1.55rem 1.25rem;}
+  .trust-stat{border-left:1px solid rgba(255,255,255,.22);padding-left:1rem;}
+  .trust-stat:first-child{border-left:0;padding-left:0;}
+  .trust-footnote{margin:0;padding:0 0 .9rem;font-size:.72rem;color:rgba(255,255,255,.62);}
+  .service-overview{display:grid;grid-template-columns:minmax(250px,.4fr) minmax(0,.6fr);gap:clamp(32px,6vw,72px);align-items:start;}
+  .service-intro{position:sticky;top:125px;}
+  .service-intro h2,.measure-heading h2,.coverage-copy h2,.scale-copy h2{font-size:clamp(2.1rem,4.1vw,3.45rem);color:var(--blue-deep);margin:.65rem 0 1rem;}
+  .service-intro p,.measure-heading p,.coverage-copy>p{color:var(--ink-soft);font-size:1.08rem;}
+  .service-paths-stacked{grid-template-columns:1fr;gap:2.1rem;}
+  .service-path-with-photo{min-height:365px;padding:2.1rem 2rem 2rem 185px;overflow:visible;}
+  .service-path-with-photo.photo-left{padding-left:2rem;padding-right:185px;}
+  .service-circle-photo{position:absolute;left:-42px;top:50%;transform:translateY(-50%);width:190px;height:190px;border-radius:50%;overflow:hidden;border:10px solid #fff;box-shadow:0 20px 42px -18px rgba(14,79,134,.55);background:#dfe8ec;}
+  .photo-left .service-circle-photo{left:auto;right:-42px;}
+  .service-circle-photo img{width:100%;height:100%;object-fit:cover;}
+  .measurement-feature{background:linear-gradient(180deg,#eef6fc,#f8fbfd);}
+  .measure-heading{max-width:770px;margin-bottom:2.2rem;text-align:left;}
+  .map-calc-layout{grid-template-columns:minmax(0,1.85fr) minmax(300px,1fr);gap:1.7rem;}
+  .map-results{top:112px;border-top:5px solid var(--green);}
+  .map-results .eyebrow{margin-bottom:.45rem;}
+  .map-results h3{font-size:1.65rem;}
+  .coverage-grid{display:grid;grid-template-columns:minmax(0,.56fr) minmax(360px,.44fr);gap:clamp(38px,7vw,86px);align-items:center;}
+  .location-panel{margin-top:1.25rem;padding:1.35rem 1.4rem;border-radius:16px;border:1px solid var(--line);background:#fff;box-shadow:0 14px 34px -26px rgba(14,79,134,.5);}
+  .residential-panel{border-left:5px solid var(--green);}.commercial-panel{border-left:5px solid var(--blue);}
+  .location-kicker{font-size:.72rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-soft);}
+  .location-panel h3{font-size:1.3rem;color:var(--blue-deep);margin:.35rem 0 .85rem;}
+  .florida-map-card{padding:2rem;border-radius:28px;background:linear-gradient(145deg,var(--blue-ink),var(--blue-deep));box-shadow:0 28px 64px -28px rgba(14,79,134,.7);}
+  .florida-map-card svg{width:100%;max-height:560px;}
+  .fl-state{fill:#d9ebf6;stroke:#fff;stroke-width:5;}.fl-core{fill:#75a94f;opacity:.95;}.map-pin{stroke:#fff;stroke-width:4;}.map-pin.home{fill:var(--green);}.map-pin.project{fill:var(--blue-bright);}.map-route{fill:none;stroke:#fff;stroke-width:3;stroke-dasharray:8 8;opacity:.8;}.florida-map-card text{fill:#fff;font:700 18px var(--body);}.map-legend{display:flex;gap:1rem;flex-wrap:wrap;color:#fff;font-size:.85rem;font-weight:700;}.map-legend span{display:flex;align-items:center;gap:.45rem;}.map-legend i{width:13px;height:13px;border-radius:50%;display:inline-block;border:2px solid #fff;}.legend-core{background:var(--green);}.legend-project{background:var(--blue-bright);}
+  .scale-proof{position:relative;min-height:620px;padding:0;display:grid;align-items:end;overflow:hidden;background:var(--blue-ink);}
+  .scale-photo{position:absolute;inset:0;}.scale-photo::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(3,30,51,.92) 0%,rgba(3,30,51,.68) 48%,rgba(3,30,51,.2) 100%);}.scale-photo img{width:100%;height:100%;object-fit:cover;}
+  .scale-copy{position:relative;z-index:2;width:100%;padding-block:clamp(70px,9vw,125px);color:#fff;}
+  .scale-copy h2{color:#fff;max-width:12ch;}.scale-copy p{max-width:54ch;font-size:1.1rem;color:#e1edf4;margin:0 0 1.5rem;}
+  #reviews .sec-head,#articles .sec-head{margin-inline:0;text-align:left;}
+  .installation-fineprint-compact{max-height:none;overflow:visible;}
+  .installation-fineprint-compact p{margin:.35rem 0 .7rem;}
+  .installation-fineprint-compact details{border-top:1px solid rgba(111,79,18,.22);padding-top:.65rem;}
+  .installation-fineprint-compact summary{cursor:pointer;font-weight:800;color:#6f4f12;}
+
+  @media(max-width:1050px){
+    .hero-grid,.service-overview,.coverage-grid{grid-template-columns:1fr;}
+    .hero-copy{max-width:760px}.hero-copy h1{max-width:12ch}.service-intro{position:static;max-width:760px}.service-paths-stacked{max-width:850px}.coverage-copy{max-width:800px}.florida-map-card{max-width:650px;width:100%;}
+  }
+  @media(max-width:720px){
+    .hero-grid{padding-block:46px}.hero-photo,.hero-photo img{min-height:320px}.trust-stats{grid-template-columns:1fr 1fr;text-align:left}.trust-stat:nth-child(3){border-left:0;padding-left:0}.service-path-with-photo,.service-path-with-photo.photo-left{padding:125px 1.35rem 1.5rem;}.service-circle-photo,.photo-left .service-circle-photo{width:150px;height:150px;left:50%;right:auto;top:-38px;transform:translateX(-50%);}.scale-proof{min-height:560px}.scale-photo::after{background:linear-gradient(0deg,rgba(3,30,51,.94) 0%,rgba(3,30,51,.58) 62%,rgba(3,30,51,.18) 100%);}
+  }
+
 </style>
 
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
@@ -1169,9 +1228,8 @@
 <!-- ===== Utility bar ===== -->
 <div class="ticker"><div class="wrap">
   <div class="feats">
-    <span>🌱 Florida-grown, fresh-cut sod</span>
-    <span>🚚 Free local delivery</span>
-    <span>📍 Sarasota–Bradenton–Venice &amp; Fort Myers–Cape Coral</span>
+    <span>Florida-grown, fresh-cut sod</span>
+    <span>Free local delivery</span>
   </div>
   <div>Call or text <a href="tel:+18332474763">833-247-4763</a></div>
 </div></div>
@@ -1180,7 +1238,7 @@
 <header class="nav" id="nav">
   <div class="wrap">
     <div class="nav-top">
-      <a class="brand" href="#top"><img src="data:image/jpeg;base64,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" alt="AgriScape Sod Service" /></a>
+      <a class="brand" href="#top"><img src="images/agriscape-logo.jpg" alt="AgriScape Sod Service" /></a>
       <div class="nav-actions">
         <!-- GOOGLE REVIEWS BADGE — links to your Google listing.
              Set the rating + count below to your current Google numbers.
@@ -1195,7 +1253,7 @@
           </span>
         </a>
         <a class="nav-phone" href="tel:+18332474763">📞 833-247-4763</a>
-        <button class="btn btn-primary" onclick="openWizard()">Schedule now</button>
+        <button class="btn btn-primary" onclick="openWizard()">Get pricing</button>
         <button class="menu-btn" id="menuBtn" aria-label="Menu"><span></span><span></span><span></span></button>
       </div>
     </div>
@@ -1211,281 +1269,195 @@
 </header>
 
 <!-- ===== Hero ===== -->
-<section class="hero" id="top" style="padding:0;">
-  <div class="hero-slides" aria-hidden="true">
-     <div class="slide active" style="background-image:url('images/hero-1.jpg')"></div>
-     <div class="slide" style="background-image:url('images/hero-2.jpg')"></div>
-     <div class="slide" style="background-image:url('images/hero-3.jpg')"></div>
-  </div>
-  <div class="scrim" aria-hidden="true"></div>
-  <div class="stripes" aria-hidden="true"></div>
-  <div class="wrap"><div class="hero-inner">
-    <span class="eyebrow on-dark">Florida-grown sod · Delivered &amp; installed</span>
-    <h1>Fresh-cut Florida sod, done right.</h1>
-    <div class="tag">The grass is greener on our side.</div>
-    <p class="sub">From a single backyard to statewide projects — AgriScape grows, delivers, and installs premium sod across Southwest and Central Florida. Family-owned since 2012. Tell us about your project and get a fast, free quote.</p>
-    <div class="cta-row">
-      <button class="btn btn-primary" onclick="openWizard()">Schedule now</button>
-      <a class="btn btn-out-light" href="#measure-lawn">Measure your lawn on the map</a>
+<section class="hero hero-split" id="top" style="padding:0;">
+  <div class="wrap hero-grid">
+    <div class="hero-copy reveal">
+      <span class="eyebrow on-dark">Florida-grown sod delivery and installation</span>
+      <h1>Fresh-cut sod, delivered or installed right.</h1>
+      <p class="sub">From backyard lawn replacements to large commercial projects, AgriScape grows, delivers, and installs Florida sod across Southwest and Central Florida.</p>
+      <div class="cta-row">
+        <button class="btn btn-primary" onclick="openDeliveryWizard()">Get delivery pricing</button>
+        <a class="btn btn-out-light" href="#measure-lawn">Measure my lawn</a>
+      </div>
+      <p class="callline">Need help choosing? Call or text <a href="tel:+18332474763">833-247-4763</a>.</p>
     </div>
-    <p class="callline">Prefer to talk? Call or text <a href="tel:+18332474763">833-247-4763</a> — we respond fast.</p>
-  </div></div>
+    <div class="hero-photo reveal" aria-label="AgriScape sod project photo placeholder">
+      <img src="images/hero-sod.jpg" alt="Freshly installed Florida sod project" />
+      <div class="hero-photo-note">Freshly harvested. Professionally handled. Ready to root.</div>
+    </div>
+  </div>
 </section>
 
 <!-- ===== Trust ribbon ===== -->
 <section class="trust-ribbon" aria-label="Why customers trust AgriScape">
   <div class="wrap">
-
     <div class="trust-stats">
-      <div class="trust-stat">
-        <strong>Since 2012</strong>
-        <span>Family-owned and local</span>
-      </div>
-
-      <div class="trust-stat">
-        <strong>Fresh-cut</strong>
-        <span>Harvested within 24 hours</span>
-      </div>
-
-      <div class="trust-stat">
-        <strong>Free local delivery</strong>
-        <span>Across our core service area</span>
-      </div>
-
-      <div class="trust-stat">
-        <strong>Right grass</strong>
-        <span>Matched to your yard and project</span>
-      </div>
+      <div class="trust-stat"><strong>Since 2012</strong><span>Family-owned in Florida</span></div>
+      <div class="trust-stat"><strong>Fresh-cut</strong><span>Harvested close to delivery</span></div>
+      <div class="trust-stat"><strong>Millions of sq. ft.*</strong><span>Installed across Florida</span></div>
+      <div class="trust-stat"><strong>Homes to large projects</strong><span>Delivery and installation capacity</span></div>
     </div>
-
-    <div class="trust-marquee" aria-label="Customers and project types we serve">
-      <div class="trust-track">
-        <span>Homeowners</span>
-        <span>HOAs</span>
-        <span>Landscapers</span>
-        <span>Builders</span>
-        <span>Property managers</span>
-        <span>Contractors</span>
-        <span>Municipal projects</span>
-
-        <span aria-hidden="true">Homeowners</span>
-        <span aria-hidden="true">HOAs</span>
-        <span aria-hidden="true">Landscapers</span>
-        <span aria-hidden="true">Builders</span>
-        <span aria-hidden="true">Property managers</span>
-        <span aria-hidden="true">Contractors</span>
-        <span aria-hidden="true">Municipal projects</span>
-      </div>
-    </div>
-
+    <p class="trust-footnote">*Replace with a verified square-footage figure before publishing.</p>
   </div>
 </section>
 
 <!-- ===== Services ===== -->
-<section id="services">
-  <div class="wrap">
-
-    <div class="sec-head center reveal">
-      <h2>Choose sod delivery or full-service installation</h2>
-      <p>
-        Order fresh-cut sod for your own project, or let AgriScape handle
-        everything from lawn removal and ground preparation to installation
-        and cleanup.
-      </p>
+<section id="services" class="services-editorial">
+  <div class="wrap service-overview">
+    <div class="service-intro reveal">
+      <span class="eyebrow">Choose your path</span>
+      <h2>Get fresh sod delivered, or let us handle the entire lawn.</h2>
+      <p>Start with the option that matches your project. Both paths can use your map measurement, so you only enter the property details once.</p>
+      <a class="text-arrow" href="#measure-lawn">Measure the property first →</a>
     </div>
 
-    <div class="service-paths">
-
-      <!-- Sod delivery -->
-      <article class="service-path reveal">
-<div class="service-path-content">
+    <div class="service-paths service-paths-stacked">
+      <article class="service-path service-path-with-photo reveal">
+        <div class="service-circle-photo delivery-photo">
+          <img src="images/sod-delivery.jpg" alt="Sod delivery placeholder" />
+        </div>
+        <div class="service-path-content">
           <span class="service-label">Sod delivery</span>
-
-          <h3>Need fresh sod delivered?</h3>
-
-          <p>
-            Choose your grass, estimate how many pallets you need, and request
-            delivery pricing for your home, crew, or contractor.
-          </p>
-
+          <h3>Fresh sod delivered to your property.</h3>
+          <p>Choose the grass, estimate your quantity, and request local delivery pricing for your home, crew, or project.</p>
           <ul class="service-points">
             <li>Florida-grown and freshly harvested</li>
-            <li>Free local delivery</li>
             <li>Several Florida grass varieties</li>
-            <li>One pallet covers approximately 400 square feet</li>
+            <li>Local delivery available</li>
           </ul>
-
           <div class="service-actions">
-            <button
-              class="btn btn-primary"
-              type="button"
-              onclick="openDeliveryWizard()"
-            >
-              Get delivery pricing
-            </button>
-
-            <a class="service-text-link" href="#measure-lawn">
-              Measure your lawn on the map →
-            </a>
+            <button class="btn btn-primary" onclick="openDeliveryWizard()">Get delivery pricing</button>
+            <a class="service-text-link" href="#measure-lawn">Measure your lawn on the map →</a>
           </div>
         </div>
       </article>
 
-      <!-- Full-service installation -->
-      <article class="service-path featured reveal">
-<div class="service-path-content">
+      <article class="service-path featured service-path-with-photo photo-left reveal">
+        <div class="service-circle-photo installation-photo">
+          <img src="images/sod-installation.jpg" alt="Sod installation placeholder" />
+        </div>
+        <div class="service-path-content">
           <span class="service-label">Full-service installation</span>
-
-          <h3>Want us to handle the whole project?</h3>
-
-          <p>
-            Tell us about your property and we’ll prepare an installation quote
-            based on the lawn size, existing conditions, grass type, and access.
-          </p>
-
+          <h3>We prepare, install, and clean up.</h3>
+          <p>Tell us about the property and we’ll prepare a planning estimate before confirming conditions during the free site review.</p>
           <ul class="service-points">
             <li>Existing lawn removal</li>
             <li>Ground preparation and grading</li>
-            <li>Fresh sod delivery</li>
-            <li>Professional installation and cleanup</li>
+            <li>Fresh sod installation and cleanup</li>
           </ul>
-
           <div class="service-actions">
-            <button
-              class="btn btn-blue"
-              type="button"
-              onclick="openWizard('installation')"
-            >
-              Request an installation quote
-            </button>
-
-            <a class="service-text-link" href="#measure-lawn">
-              Measure your lawn on the map →
-            </a>
+            <button class="btn btn-blue" onclick="openInstallationWizard()">Estimate installation</button>
+            <a class="service-text-link" href="#measure-lawn">Measure your lawn on the map →</a>
           </div>
         </div>
       </article>
+    </div>
+  </div>
+</section>
 
+<!-- ===== Map sod calculator ===== -->
+<section id="measure-lawn" class="band-blue measurement-feature">
+  <div class="wrap">
+    <div class="measure-heading reveal">
+      <span class="eyebrow">The easier way to plan a sod project</span>
+      <h2>Measure your lawn from the map.</h2>
+      <p>Search the property, outline each grass area, and get a recommended sod quantity with overage for cuts and fitting.</p>
     </div>
 
-    <!-- Customer types -->
-    <div class="customer-types reveal">
-
-      <div class="customer-types-heading">
-        <span class="eyebrow">Serving Southwest Florida</span>
-        <h3>Residential and commercial sod projects</h3>
+    <div class="map-calc-layout">
+      <div class="map-card reveal">
+        <div class="map-search">
+          <input id="mapAddress" type="search" placeholder="Enter a property address" autocomplete="street-address" aria-label="Property address" />
+          <button class="btn btn-blue" id="mapSearchBtn" type="button">Find property</button>
+        </div>
+        <div id="sodMap" aria-label="Interactive aerial map for outlining lawn areas"></div>
+        <div class="map-status" id="mapStatus">Search for an address, then use the polygon tool to outline the grass.</div>
       </div>
 
-      <div class="customer-type-grid">
-
-        <a class="customer-type" href="#">
-          <span class="customer-type-icon" aria-hidden="true">🏡</span>
-
-          <span>
-            <strong>Homeowners</strong>
-            <small>
-              Sod delivery, lawn replacement, and full-service installation for
-              homes throughout our local service area.
-            </small>
-          </span>
-
-          <span class="customer-arrow" aria-hidden="true">→</span>
-        </a>
-
-        <a class="customer-type" href="#">
-          <span class="customer-type-icon" aria-hidden="true">🏗️</span>
-
-          <span>
-            <strong>Commercial and government</strong>
-            <small>
-              Sod supply and installation for contractors, HOAs, developers,
-              municipalities, and large-scale projects.
-            </small>
-          </span>
-
-          <span class="customer-arrow" aria-hidden="true">→</span>
-        </a>
-
-      </div>
+      <aside class="map-results reveal">
+        <span class="eyebrow">Your project</span>
+        <h3>Measure once. Use it for either quote.</h3>
+        <ol class="map-instructions">
+          <li>Search the property address.</li>
+          <li>Use the polygon tool to outline each lawn area.</li>
+          <li>Review the quantity and continue to delivery or installation.</li>
+        </ol>
+        <div class="map-metric"><span>Measured area</span><strong id="mapMeasuredSqFt">0 sq. ft.</strong></div>
+        <div class="map-metric"><span>Recommended overage</span><strong id="mapWasteSqFt">0 sq. ft.</strong></div>
+        <div class="map-metric"><span>Recommended sod total</span><strong id="mapAdjustedSqFt">0 sq. ft.</strong></div>
+        <div class="map-metric primary"><span>Estimated pallets</span><strong id="mapPallets">0</strong></div>
+        <div class="map-result-actions">
+          <button class="btn btn-primary" id="useMapEstimate" type="button" disabled>Get delivery pricing</button>
+          <button class="btn btn-blue" id="useMapInstallationEstimate" type="button" disabled>Estimate installation*</button>
+          <button class="btn btn-mini-ghost" id="clearMapShapes" type="button">Clear outlined areas</button>
+        </div>
+        <p class="map-disclaimer">*Installation pricing is a planning range. Final pricing follows a free site review and verified measurement. Map measurements may differ from field measurements.</p>
+      </aside>
     </div>
-
   </div>
 </section>
 
 
-<!-- ===== Instant estimate ===== -->
-<section class="band-green" id="estimate" hidden aria-hidden="true">
-  <div class="wrap calc">
-    <div class="reveal">
-      <span class="eyebrow">Instant Estimate</span>
-      <h2 style="color:var(--blue-deep); font-size:clamp(1.8rem,3.8vw,2.8rem); margin:.5rem 0 .8rem;">Ballpark your project in 10 seconds.</h2>
-      <p style="color:var(--ink-soft); font-size:1.06rem;">Cost is usually the first question — so here's a quick ballpark. Enter your square footage and grass type for a <strong>fully-installed</strong> estimate that includes old turf removal, delivery, and installation. Then grab your exact, free quote.</p>
-      <p style="color:var(--ink-soft); font-size:.95rem; margin-top:1rem;">Not sure of your square footage? Measure the length × width of each area and add them up — or send photos when you reach out and we'll figure it out for you.</p>
-    </div>
-    <div class="calc-card reveal">
-      <!-- >>> SET YOUR REAL RATES <<< Each grass has two installed rates:
-           data-small (under 1,600 sq ft) and data-large (1,600+). Both include
-           removal + delivery + install. Numbers below are placeholders. -->
-      <div class="calc-field"><label for="sqftCalc">Approximate square footage</label>
-        <input id="sqftCalc" type="number" min="0" inputmode="numeric" placeholder="e.g. 2500" /></div>
-      <div class="calc-field"><label for="grassCalc">Grass type</label>
-        <select id="grassCalc">
-          <option data-small="1.25" data-large="0.95">Floratam St. Augustine</option>
-          <option data-small="1.35" data-large="1.05">Bitterblue St. Augustine</option>
-          <option data-small="1.85" data-large="1.55">ProVista St. Augustine</option>
-          <option data-small="1.45" data-large="1.15">Palmetto St. Augustine</option>
-          <option data-small="1.70" data-large="1.40">Empire Zoysia</option>
-          <option data-small="0.95" data-large="0.70">Argentine Bahia</option>
-        </select></div>
-      <div class="result">
-        <div class="num" id="estOut">— </div>
-        <div class="lbl">estimated — old turf removal, delivery &amp; install included</div>
-        <div class="tier" id="tierNote"></div>
-        <p class="disc">Ballpark only, using sample rates. Your exact, free quote is confirmed once we see your space.</p>
-      </div>
-      <button class="btn btn-primary" type="button" onclick="openInstallationWizard(Number(sqftEl.value)||0)">Review this installation estimate*</button>
-      <p class="calc-foot"><strong>What's included:</strong> removal of old turf, delivery, and professional installation. <strong>Why under 1,600 sq ft costs more per foot:</strong> fixed costs (delivery, crew minimums, equipment) are the same on a small job as a big one, so they're a bigger share of a smaller lawn. At 1,600 sq ft and up, that spreads out and the per-foot rate drops.</p>
-    </div>
-  </div>
-</section>
 
 <!-- ===== Regional coverage ===== -->
-<section id="coverage">
-  <div class="wrap">
-    <div class="sec-head center reveal">
-      <span class="eyebrow" style="justify-content:center;">Where we work</span>
-      <h2>Clear coverage across Florida.</h2>
-      <p>Based in Arcadia, with crews and trucks reaching well beyond. Residential and large-scale coverage differ — here's exactly where we go.</p>
-    </div>
-    <div class="cover">
-      <div class="cover-card res reveal">
-        <span class="who">Residential</span>
-        <h3>Homes &amp; smaller lawns</h3>
-        <p style="color:var(--ink-soft); margin:.2rem 0 1rem; font-size:.95rem;">New lawns and replacements for homeowners in:</p>
+<section id="coverage" class="coverage-editorial">
+  <div class="wrap coverage-grid">
+    <div class="coverage-copy reveal">
+      <span class="eyebrow">Where we work</span>
+      <h2>Local residential service. Broader project capacity.</h2>
+      <p>Based in Arcadia, AgriScape serves homeowners across Southwest Florida and supports larger commercial and government work across a wider service area.</p>
+
+      <div class="location-panel residential-panel">
+        <span class="location-kicker">Residential delivery and installation</span>
+        <h3>Southwest Florida communities</h3>
         <div class="chips">
-          <span class="chip">Sarasota</span><span class="chip">Bradenton</span><span class="chip">Venice</span>
-          <span class="chip">Lakewood Ranch</span><span class="chip">Parrish</span><span class="chip">Fort Myers</span>
-          <span class="chip">Cape Coral</span><span class="chip">North Port</span>
+          <span class="chip">Arcadia</span><span class="chip">Bradenton</span><span class="chip">Sarasota</span>
+          <span class="chip">Venice</span><span class="chip">North Port</span><span class="chip">Port Charlotte</span>
+          <span class="chip">Punta Gorda</span><span class="chip">Fort Myers</span><span class="chip">Cape Coral</span>
         </div>
       </div>
-      <div class="cover-card com reveal">
-        <span class="who">Commercial &amp; government</span>
-        <h3>Large &amp; statewide projects</h3>
-        <p style="color:var(--ink-soft); margin:.2rem 0 1rem; font-size:.95rem;">HOAs, developers, contractors &amp; public projects across:</p>
+
+      <div class="location-panel commercial-panel">
+        <span class="location-kicker">Commercial and government</span>
+        <h3>Larger Florida projects</h3>
         <div class="chips">
-          <span class="chip">Sarasota–Bradenton–Venice</span><span class="chip">Fort Myers–Cape Coral</span>
-          <span class="chip">Tampa–St. Pete</span><span class="chip">Orlando</span><span class="chip">Southwest Florida</span>
+          <span class="chip">Southwest Florida</span><span class="chip">Tampa Bay</span>
+          <span class="chip">Central Florida</span><span class="chip">Statewide by project</span>
         </div>
       </div>
     </div>
+
+    <div class="florida-map-card reveal" aria-label="Stylized Florida service area map">
+      <svg viewBox="0 0 430 560" role="img" aria-labelledby="flTitle flDesc">
+        <title id="flTitle">AgriScape Florida service areas</title>
+        <desc id="flDesc">A stylized Florida map showing Southwest Florida as the residential core and broader Florida commercial project coverage.</desc>
+        <path class="fl-state" d="M122 37 C166 29 236 39 285 54 L306 88 292 120 308 155 295 190 312 226 299 263 323 306 315 348 343 390 334 429 353 470 337 514 314 525 292 495 277 459 254 420 225 387 206 350 182 326 164 292 145 261 127 230 111 198 88 169 74 134 87 99 107 75 Z"/>
+        <path class="fl-core" d="M111 198 C127 230 145 261 164 292 182 326 206 350 225 387 254 420 277 459 292 495 276 486 255 466 239 442 218 410 197 383 174 354 152 326 135 294 119 260 103 228 92 205 88 169 Z"/>
+        <circle class="map-pin home" cx="145" cy="286" r="9"/><text x="161" y="291">Residential core</text>
+        <circle class="map-pin project" cx="232" cy="173" r="9"/><text x="248" y="178">Larger projects</text>
+        <path class="map-route" d="M145 286 C175 258 204 226 232 173"/>
+      </svg>
+      <div class="map-legend"><span><i class="legend-core"></i>Residential core</span><span><i class="legend-project"></i>Commercial by project</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Proof of scale ===== -->
+<section class="scale-proof">
+  <div class="scale-photo"><img src="images/team-fleet.jpg" alt="AgriScape team, trucks, and equipment" /></div>
+  <div class="wrap scale-copy reveal">
+    <span class="eyebrow on-dark">Real crews. Real equipment.</span>
+    <h2>Built for backyard jobs and large Florida projects.</h2>
+    <p>AgriScape supports homeowners, contractors, developers, HOAs, and public-sector work with the crews, trucks, and equipment needed to handle projects of different sizes.</p>
+    <button class="btn btn-primary" onclick="openWizard()">Tell us about your project</button>
   </div>
 </section>
 
 <!-- ===== Reviews ===== -->
 <section class="band-blue" id="reviews">
   <div class="wrap">
-    <div class="sec-head center reveal">
-      <span class="eyebrow" style="justify-content:center;">Reviews</span>
+    <div class="sec-head reveal">
+      <span class="eyebrow">Reviews</span>
       <h2>Trusted across Florida.</h2>
       <p>From single-yard replacements to statewide builds. <a href="https://www.google.com/maps?cid=3443456827260833520" target="_blank" rel="noopener" style="color:var(--blue); font-weight:700;">Read our Google reviews →</a></p>
     </div>
@@ -1501,8 +1473,8 @@
 <!-- ===== Articles ===== -->
 <section id="articles">
   <div class="wrap">
-    <div class="sec-head center reveal">
-      <span class="eyebrow" style="justify-content:center;">Resources</span>
+    <div class="sec-head reveal">
+      <span class="eyebrow">Resources</span>
       <h2>Answers to the questions you're actually asking.</h2>
       <p>Plain answers to real buying questions — written so people (and AI search) can find and quote them.</p>
     </div>
@@ -1514,111 +1486,6 @@
   </div>
 </section>
 
-<!-- ===== Map sod calculator ===== -->
-<section id="measure-lawn">
-  <div class="wrap">
-
-    <div class="sec-head center reveal">
-      <span class="eyebrow">Measure your lawn</span>
-      <h2>Outline your yard and calculate how much sod to order</h2>
-      <p>
-        Search for the property, draw around each lawn area on the aerial map,
-        and we’ll add 8% for cuts and waste before calculating full pallets.
-      </p>
-    </div>
-
-    <div class="map-calc-layout">
-
-      <div class="map-card reveal">
-        <div class="map-search">
-          <input
-            id="mapAddress"
-            type="search"
-            placeholder="Enter a property address"
-            autocomplete="street-address"
-            aria-label="Property address"
-          />
-          <button class="btn btn-blue" id="mapSearchBtn" type="button">
-            Find property
-          </button>
-        </div>
-
-        <div id="sodMap" aria-label="Interactive aerial map for outlining lawn areas"></div>
-
-        <div class="map-status" id="mapStatus">
-          Search for an address, then use the polygon tool on the map to outline the grass.
-        </div>
-      </div>
-
-      <aside class="map-results reveal">
-        <h3>Your sod estimate</h3>
-
-        <ol class="map-instructions">
-          <li>Search for the property address.</li>
-          <li>Select the polygon tool on the map.</li>
-          <li>Click around each lawn area, then click the first point to close it.</li>
-          <li>Draw additional sections for side yards or separate areas.</li>
-        </ol>
-
-        <div class="map-metric">
-          <span>Outlined lawn area</span>
-          <strong id="mapMeasuredSqFt">0 sq. ft.</strong>
-        </div>
-
-        <div class="map-metric">
-          <span>8% cuts and waste</span>
-          <strong id="mapWasteSqFt">0 sq. ft.</strong>
-        </div>
-
-        <div class="map-metric">
-          <span>Recommended sod</span>
-          <strong id="mapAdjustedSqFt">0 sq. ft.</strong>
-        </div>
-
-        <div class="map-metric primary">
-          <span>Recommended pallets</span>
-          <strong id="mapPallets">0</strong>
-        </div>
-
-        <div class="map-result-actions">
-          <button
-            class="btn btn-primary"
-            id="useMapEstimate"
-            type="button"
-            disabled
-          >
-            Use this estimate for delivery pricing
-          </button>
-
-          <button
-            class="btn btn-blue"
-            id="useMapInstallationEstimate"
-            type="button"
-            disabled
-          >
-            Use this area for a rough installation estimate*
-          </button>
-
-          <button
-            class="btn btn-mini-ghost"
-            id="clearMapShapes"
-            type="button"
-          >
-            Clear outlined areas
-          </button>
-        </div>
-
-        <p class="map-disclaimer">
-          *Installation pricing is a rough planning range, not a final quote.
-          Final pricing requires a free on-site measurement and site review.
-          Satellite measurements are estimates. One pallet covers approximately
-          400 square feet.
-        </p>
-      </aside>
-
-    </div>
-  </div>
-</section>
 
 <!-- ===== FAQ ===== -->
 <section class="band-green" id="faq">
@@ -1639,10 +1506,10 @@
 <!-- ===== Final CTA ===== -->
 <section class="final">
   <div class="wrap">
-    <h2 class="reveal">Ready for a lawn you'll love?</h2>
-    <p class="reveal">Get your fast, free quote — for a single yard or a statewide project.</p>
+    <h2 class="reveal">Ready to plan your sod project?</h2>
+    <p class="reveal">Measure the property, request pricing, or talk with our team about the right next step.</p>
     <div class="cta-row reveal">
-      <button class="btn btn-primary" onclick="openWizard()">Schedule now</button>
+      <button class="btn btn-primary" onclick="openWizard()">Get pricing</button>
       <a class="btn btn-out-light" href="tel:+18332474763">Call 833-247-4763</a>
     </div>
   </div>
@@ -1662,7 +1529,7 @@
       <div><h4>Hours</h4>
         <div class="hours-row"><span>Mon–Fri</span><span>8:00a – 5:00p</span></div>
         <div class="hours-row"><span>Sat–Sun</span><span>Closed</span></div>
-        <button class="btn btn-primary" style="margin-top:1rem;" onclick="openWizard()">Schedule now</button>
+        <button class="btn btn-primary" style="margin-top:1rem;" onclick="openWizard()">Get pricing</button>
       </div>
     </div>
     <div class="foot-bottom"><span>© 2025 AgriScape Sod Service — All rights reserved.</span><span><a href="#" style="display:inline;">Privacy Policy</a> · <a href="#" style="display:inline;">Terms</a></span></div>
@@ -1672,7 +1539,7 @@
 <!-- ===== Mobile sticky bar ===== -->
 <div class="mobile-bar">
   <a class="btn btn-out-light" href="tel:+18332474763" style="border-color:rgba(255,255,255,.6);">Call</a>
-  <button class="btn btn-primary" onclick="openWizard()">Schedule now</button>
+  <button class="btn btn-primary" onclick="openWizard()">Get pricing</button>
 </div>
 
 <!-- ===== SCHEDULE / SERVICE ROUTER MODAL ===== -->
@@ -1858,66 +1725,18 @@
           </div>
         </div>
 
-        <div class="installation-fineprint">
-          <strong>*Why the final installation price may be higher or lower</strong>
-
-          This planning range assumes the measured area is reasonably accurate,
-          the property is accessible to the crew and equipment, ordinary removal
-          and soil preparation are sufficient, and no hidden condition requires
-          added labor, equipment, material, disposal, repair, or delay.
-
-          <ul>
-            <li>
-              Narrow gates, fenced yards, stairs, steep slopes, retaining walls,
-              pools, canals, wet ground, or long distances that require sod,
-              soil, or debris to be moved by hand.
-            </li>
-            <li>
-              Septic tanks, drain fields, wells, irrigation lines, utility lines,
-              drainage systems, invisible fencing, wiring, or other underground
-              features that limit equipment use or require hand work.
-            </li>
-            <li>
-              Thick existing turf, heavy roots, tree roots, stumps, rocks,
-              concrete, pavers, buried debris, landscape fabric, or construction
-              material that makes removal harder than expected.
-            </li>
-            <li>
-              Poor drainage, standing water, erosion, severe soil compaction,
-              unsuitable soil, low areas, uneven grades, or the need for imported
-              soil, fill, sand, grading, drainage correction, or erosion control.
-            </li>
-            <li>
-              Sprinkler repairs, head relocation, missing irrigation coverage,
-              pressure issues, damaged lines, or irrigation adjustments before
-              or after installation.
-            </li>
-            <li>
-              Trees, landscape beds, patios, driveways, walkways, curbing,
-              playgrounds, sheds, furniture, pet areas, and other obstacles that
-              increase detailed cutting or reduce installation speed.
-            </li>
-            <li>
-              Extra hauling or disposal, restricted parking, traffic control,
-              gated access, HOA requirements, permits, site rules, limited work
-              hours, or special cleanup requirements.
-            </li>
-            <li>
-              Sod variety and availability, farm conditions, fuel and delivery
-              costs, job minimums, equipment needs, weather, saturated soil,
-              drought, heat, crew scheduling, or changes requested by the customer.
-            </li>
-            <li>
-              Differences between aerial, customer-entered, and verified square
-              footage, especially where trees, shadows, old imagery, pools,
-              additions, beds, or recent grading obscure the lawn boundary.
-            </li>
-            <li>
-              Conditions discovered during the free on-site review or after
-              removal begins that could not reasonably be confirmed from the
-              visible surface, photos, measurements, or aerial imagery.
-            </li>
-          </ul>
+        <div class="installation-fineprint installation-fineprint-compact">
+          <strong>*About this planning estimate</strong>
+          <p>This range assumes normal access, standard lawn removal and preparation, and a reasonably accurate measurement. Final pricing may change after the free site review if the property requires additional grading, drainage work, irrigation adjustments, disposal, hand labor, specialized access, or other work that cannot be confirmed from the map.</p>
+          <details>
+            <summary>See what can affect final pricing</summary>
+            <ul>
+              <li>Restricted equipment access, slopes, fences, stairs, wet ground, or long hand-carry distances.</li>
+              <li>Roots, buried debris, concrete, thick turf, poor soil, drainage problems, or additional grading.</li>
+              <li>Irrigation repairs, detailed cutting around obstacles, special disposal, permits, HOA rules, weather, or verified square-footage differences.</li>
+              <li>Conditions discovered during the site review or after removal begins that could not be confirmed from visible surfaces, photos, or aerial imagery.</li>
+            </ul>
+          </details>
         </div>
 
         <label class="installation-ack">
