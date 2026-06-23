@@ -8,13 +8,19 @@
 <title>Sod Installation & Delivery in Bradenton, Sarasota & Fort Myers | AgriScape Sod Service</title>
 <meta name="description" content="AgriScape Sod Service grows, delivers, and installs fresh-cut Florida sod. Serving Sarasota–Bradenton–Venice and Fort Myers–Cape Coral for homes, plus commercial & government projects statewide. Family-owned since 2012. Free quotes." />
 <meta name="theme-color" content="#1f7bc0" />
-<link rel="canonical" href="https://agriscapesod.com/" />
+<link rel="canonical" href="https://marthajsosa.github.io/agriscapesod-website.github.io/" />
+<link rel="icon" type="image/png" sizes="32x32" href="images/favicon.png" />
+<link rel="apple-touch-icon" href="images/favicon.png" />
 <meta property="og:type" content="website" />
 <meta property="og:site_name" content="AgriScape Sod Service" />
 <meta property="og:title" content="AgriScape Sod Service — Fresh-Cut Florida Sod, Delivered & Installed" />
 <meta property="og:description" content="Serving Sarasota–Bradenton–Venice and Fort Myers–Cape Coral. Family-owned since 2012." />
-<meta property="og:url" content="https://agriscapesod.com/" />
-<meta property="og:image" content="https://img1.wsimg.com/isteam/ip/2f65ef47-ab1e-4ded-a741-b8e6ec0ada41/zoysiainstalled.jpg" />
+<meta property="og:url" content="https://marthajsosa.github.io/agriscapesod-website.github.io/" />
+<meta property="og:image" content="https://marthajsosa.github.io/agriscapesod-website.github.io/images/preview.jpg" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:image" content="https://marthajsosa.github.io/agriscapesod-website.github.io/images/preview.jpg" />
 
 <!-- =====================================================================
      >>> GOOGLE TAGS GO HERE <<<  (the head control you gain on cPanel)
@@ -45,7 +51,7 @@
   "@context":"https://schema.org","@type":"LandscapingBusiness",
   "name":"AgriScape Sod Service",
   "description":"Florida sod producer, delivery and installation service. Family-owned since 2012, serving homeowners, HOAs, developers, and government projects.",
-  "url":"https://agriscapesod.com/","telephone":"+1-833-247-4763","email":"info@agriscapesod.com","foundingDate":"2012","priceRange":"$$",
+  "url":"https://marthajsosa.github.io/agriscapesod-website.github.io/","telephone":"+1-833-247-4763","email":"info@agriscapesod.com","foundingDate":"2012","priceRange":"$$",
   "founder":{"@type":"Person","name":"Randy Hunt"},
   "image":"https://img1.wsimg.com/isteam/ip/2f65ef47-ab1e-4ded-a741-b8e6ec0ada41/zoysiainstalled.jpg",
   "address":{"@type":"PostalAddress","streetAddress":"121 S Orange Ave","addressLocality":"Arcadia","addressRegion":"FL","postalCode":"34266","addressCountry":"US"},
@@ -110,9 +116,31 @@
   .ticker a{ font-weight:700; color:#bfe3fb; }
 
   /* ---- Header ---- */
-  header.nav{ position:sticky; top:0; z-index:60; background:#fff; border-bottom:1px solid var(--line); }
-  .nav-top{ display:flex; align-items:center; justify-content:space-between; gap:1rem; padding-block:.5rem; }
-  .brand img{ height:48px; width:auto; }
+  header.nav{ position:sticky; top:0; z-index:60; background:#fff; border-bottom:1px solid var(--line); box-shadow:0 4px 14px rgba(10,58,99,.08); }
+  .nav-top{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:1rem;
+    padding-block:.6rem;
+  }
+
+  .brand{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    width:176px;
+    height:80px;
+    overflow:visible;
+    flex:0 0 auto;
+  }
+
+  .brand img{
+    width:168px;
+    height:auto;
+    max-width:100%;
+    object-fit:contain;
+  }
   .nav-actions{ display:flex; align-items:center; gap:1rem; }
   .gbadge{ display:flex; align-items:center; gap:.5rem; padding:.3rem .6rem; border:1px solid var(--line); border-radius:10px; }
   .gbadge .glogo{ font-family:var(--display); font-weight:800; font-size:1.1rem; color:#4285F4; }
@@ -430,6 +458,93 @@
   }
 
 
+
+  /* ---- Map calculator launch + modal ---- */
+  .measure-launch-card{
+    max-width:780px;
+    margin-inline:auto;
+    text-align:center;
+    background:#fff;
+    border:1px solid var(--line);
+    border-top:5px solid var(--green);
+    border-radius:22px;
+    padding:clamp(1.6rem,4vw,2.6rem);
+    box-shadow:var(--shadow);
+  }
+
+  .measure-launch-card h2{
+    color:var(--blue-deep);
+    font-size:clamp(2rem,4vw,3.2rem);
+    margin:.55rem 0 .75rem;
+  }
+
+  .measure-launch-card p{
+    color:var(--ink-soft);
+    max-width:58ch;
+    margin:0 auto 1.4rem;
+    font-size:1.05rem;
+  }
+
+  .map-modal-overlay{
+    position:fixed;
+    inset:0;
+    z-index:5200;
+    display:none;
+    align-items:flex-start;
+    justify-content:center;
+    padding:3vh 16px;
+    background:rgba(10,30,50,.68);
+    overflow-y:auto;
+  }
+
+  .map-modal-overlay.open{
+    display:flex;
+  }
+
+  .map-modal{
+    width:min(1180px,100%);
+    background:#fff;
+    border-radius:18px;
+    overflow:hidden;
+    box-shadow:0 30px 80px -30px rgba(0,0,0,.68);
+  }
+
+  .map-modal-head{
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-start;
+    gap:1rem;
+    padding:1rem 1.25rem;
+    background:var(--blue-deep);
+    color:#fff;
+  }
+
+  .map-modal-head h3{
+    margin:0;
+    font-size:1.3rem;
+    color:#fff;
+  }
+
+  .map-modal-head p{
+    margin:.25rem 0 0;
+    color:#cfe5f5;
+    font-size:.92rem;
+  }
+
+  .map-modal-close{
+    border:0;
+    background:none;
+    color:#fff;
+    font-size:1.7rem;
+    line-height:1;
+    cursor:pointer;
+    padding:.15rem .25rem;
+  }
+
+  .map-modal-body{
+    padding:1rem;
+  }
+
   /* ---- Map sod calculator ---- */
   #measure-lawn{
     background:#fff;
@@ -659,6 +774,7 @@
   /* ---- Mobile sticky bar ---- */
   .mobile-bar{ display:none; position:fixed; bottom:0; left:0; right:0; z-index:70; background:var(--blue-deep); padding:.55rem; gap:.55rem; box-shadow:0 -6px 20px -10px rgba(0,0,0,.6); }
   .mobile-bar .btn{ flex:1; padding:.8em 1em; font-size:.93rem; }
+  .mobile-bar .project-flow-btn{ width:100%; flex:1 1 100%; }
 
   .reveal{ opacity:0; transform:translateY(22px); transition:opacity .6s ease, transform .6s ease; }
   .reveal.in{ opacity:1; transform:none; }
@@ -1024,11 +1140,19 @@
     grid-template-columns:auto 1fr auto;
     align-items:center;
     gap:.55rem;
-    padding-block:.45rem;
+    padding-block:.36rem;
+  }
+
+  .brand{
+    width:112px;
+    height:58px;
+    overflow:visible;
   }
 
   .brand img{
-    height:38px;
+    width:108px;
+    height:auto;
+    max-width:100%;
   }
 
   .nav-actions{
@@ -1148,21 +1272,114 @@
     padding:1.1rem;
   }
 
+  .map-modal-overlay{
+    align-items:stretch;
+    padding:0;
+  }
+
+  .map-modal{
+    width:100%;
+    max-width:none;
+    min-height:100vh;
+    border-radius:0;
+  }
+
+  .map-modal-head{
+    position:sticky;
+    top:0;
+    z-index:4;
+  }
+
+  .map-modal-body{
+    padding:.75rem;
+  }
+
+  .map-modal .map-calc-layout{
+    grid-template-columns:1fr;
+    gap:1rem;
+  }
+
+  .map-modal #sodMap{
+    height:58vh;
+    min-height:360px;
+  }
+
+  .map-modal .map-results{
+    position:static;
+    padding:1rem;
+  }
+
+  .map-modal .map-result-actions{
+    position:sticky;
+    bottom:0;
+    z-index:3;
+    background:#fff;
+    padding:.8rem 0 0;
+    box-shadow:0 -12px 24px -24px rgba(0,0,0,.55);
+  }
+
   .service-actions .btn{
     white-space:normal;
     text-align:center;
   }
 }
+
+
+  @media(max-width:720px){
+    #installationFoot{
+      flex-direction:column;
+      align-items:stretch;
+      gap:.7rem;
+    }
+
+    #installationFoot > div{
+      display:flex;
+      flex-direction:column;
+      gap:.6rem;
+      width:100%;
+    }
+
+    #installationFoot .btn{
+      width:100%;
+      justify-content:center;
+    }
+
+    #installationNext{
+      order:1;
+    }
+
+    #installationBack{
+      order:2;
+    }
+
+    #installationFoot .callrep{
+      order:3;
+      justify-content:center;
+      min-height:44px;
+    }
+  }
+
   @media (prefers-reduced-motion:reduce){
     *{ scroll-behavior:auto; } .reveal{ opacity:1; transform:none; transition:none; }
     .svc:hover,.btn:hover{ transform:none; }
     .trust-track{ animation:none; }
   }
 
+  /* ===== BALLPARK ESTIMATOR ===== */
+  #bpWz{ max-width:min(920px,96vw); }
+  #bp-map .map-results{ position:static; border-top:5px solid var(--green); }
+  .bp-error{ min-height:1.2em; margin-top:.6rem; color:#a3452f; font-size:.86rem; font-weight:700; }
+  @media(max-width:640px){
+    #bpWz{ max-width:100%; border-radius:0; min-height:100dvh; }
+    #bp-map #sodMap{ height:42vh; min-height:280px; }
+    .bp-prog{ flex-wrap:wrap; }
+  }
 
   /* ===== 2026 editorial redesign ===== */
   .text-arrow{display:inline-flex;margin-top:1rem;color:var(--green-d);font-weight:800;}
-  .hero-split{background:linear-gradient(118deg,var(--blue-ink),var(--blue-deep));}
+  .hero-split{position:relative;background:linear-gradient(118deg,rgba(3,30,51,.97),rgba(14,79,134,.93)),url("images/hero-sod.jpg") center/cover no-repeat;}
+  .hero-split::before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(3,30,51,.2),rgba(3,30,51,.05));pointer-events:none;}
+  .hero-split .hero-grid{position:relative;z-index:1;}
   .hero-grid{display:grid;grid-template-columns:minmax(0,1.02fr) minmax(380px,.98fr);gap:clamp(34px,6vw,76px);align-items:center;padding-block:clamp(56px,8vw,105px);}
   .hero-copy{text-align:left;max-width:680px;}
   .hero-copy h1{font-size:clamp(2.75rem,6.3vw,5.2rem);max-width:11ch;}
@@ -1171,11 +1388,39 @@
   .hero-photo img{width:100%;height:100%;min-height:480px;object-fit:cover;}
   .hero-photo-note{position:absolute;left:20px;right:20px;bottom:20px;padding:1rem 1.2rem;background:rgba(7,38,63,.86);border:1px solid rgba(255,255,255,.22);border-radius:12px;color:#fff;font-weight:700;backdrop-filter:blur(8px);}
   .trust-ribbon{padding-block:0;}
-  .trust-stats{text-align:left;padding-block:1.55rem 1.25rem;}
-  .trust-stat{border-left:1px solid rgba(255,255,255,.22);padding-left:1rem;}
-  .trust-stat:first-child{border-left:0;padding-left:0;}
+  .trust-ribbon .wrap{
+  max-width:1700px;
+}
+
+.trust-stats{
+  display:grid;
+  grid-template-columns:repeat(5,minmax(0,1fr));
+  gap:0;
+  text-align:center;
+  padding-block:1.55rem 1.25rem;
+}
+
+.trust-stat{
+  min-width:0;
+  padding:0 1rem;
+  border-left:1px solid rgba(255,255,255,.22);
+}
+
+.trust-stat:first-child{
+  border-left:0;
+}
+
+.trust-stat strong{
+  white-space:nowrap;
+  font-size:clamp(.98rem,1.3vw,1.35rem);
+}
+
+.trust-stat span{
+  line-height:1.35;
+  font-size:.76rem;
+}
   .trust-footnote{margin:0;padding:0 0 .9rem;font-size:.72rem;color:rgba(255,255,255,.62);}
-  .service-overview{display:grid;grid-template-columns:minmax(250px,.4fr) minmax(0,.6fr);gap:clamp(32px,6vw,72px);align-items:start;}
+  .service-overview{display:grid;grid-template-columns:minmax(250px,.4fr) minmax(0,.6fr);gap:clamp(60px,9vw,120px);align-items:start;}
   .service-intro{position:sticky;top:125px;}
   .service-intro h2,.measure-heading h2,.coverage-copy h2,.scale-copy h2{font-size:clamp(2.1rem,4.1vw,3.45rem);color:var(--blue-deep);margin:.65rem 0 1rem;}
   .service-intro p,.measure-heading p,.coverage-copy>p{color:var(--ink-soft);font-size:1.08rem;}
@@ -1191,14 +1436,117 @@
   .map-results{top:112px;border-top:5px solid var(--green);}
   .map-results .eyebrow{margin-bottom:.45rem;}
   .map-results h3{font-size:1.65rem;}
-  .coverage-grid{display:grid;grid-template-columns:minmax(0,.56fr) minmax(360px,.44fr);gap:clamp(38px,7vw,86px);align-items:center;}
-  .location-panel{margin-top:1.25rem;padding:1.35rem 1.4rem;border-radius:16px;border:1px solid var(--line);background:#fff;box-shadow:0 14px 34px -26px rgba(14,79,134,.5);}
-  .residential-panel{border-left:5px solid var(--green);}.commercial-panel{border-left:5px solid var(--blue);}
-  .location-kicker{font-size:.72rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-soft);}
-  .location-panel h3{font-size:1.3rem;color:var(--blue-deep);margin:.35rem 0 .85rem;}
-  .florida-map-card{padding:2rem;border-radius:28px;background:linear-gradient(145deg,var(--blue-ink),var(--blue-deep));box-shadow:0 28px 64px -28px rgba(14,79,134,.7);}
-  .florida-map-card svg{width:100%;max-height:560px;}
-  .fl-state{fill:#d9ebf6;stroke:#fff;stroke-width:5;}.fl-core{fill:#75a94f;opacity:.95;}.map-pin{stroke:#fff;stroke-width:4;}.map-pin.home{fill:var(--green);}.map-pin.project{fill:var(--blue-bright);}.map-route{fill:none;stroke:#fff;stroke-width:3;stroke-dasharray:8 8;opacity:.8;}.florida-map-card text{fill:#fff;font:700 18px var(--body);}.map-legend{display:flex;gap:1rem;flex-wrap:wrap;color:#fff;font-size:.85rem;font-weight:700;}.map-legend span{display:flex;align-items:center;gap:.45rem;}.map-legend i{width:13px;height:13px;border-radius:50%;display:inline-block;border:2px solid #fff;}.legend-core{background:var(--green);}.legend-project{background:var(--blue-bright);}
+  .coverage-editorial{
+    padding-block:72px 86px;
+    background:#fff;
+  }
+
+  .coverage-shell{
+    max-width:1180px;
+  }
+
+  .coverage-intro{
+    max-width:850px;
+    margin:0 auto 1.35rem;
+    text-align:center;
+  }
+
+  .coverage-intro .eyebrow{
+    margin-bottom:.35rem;
+  }
+
+  .coverage-intro h2{
+    font-size:clamp(2.1rem,4vw,3.45rem);
+    color:var(--blue-deep);
+    margin:.45rem auto .8rem;
+    max-width:18ch;
+  }
+
+  .coverage-intro p{
+    max-width:70ch;
+    margin:0 auto;
+    color:var(--ink-soft);
+    font-size:1.06rem;
+    line-height:1.55;
+  }
+
+  .coverage-map-wrap{
+    width:min(88vw,940px);
+    margin:0 auto;
+  }
+
+  .florida-map-card{
+    padding:14px;
+    border-radius:24px;
+    background:#fff;
+    border:1px solid rgba(13,71,120,.18);
+    box-shadow:0 22px 60px rgba(13,71,120,.16);
+  }
+
+  .florida-service-map{
+    width:100%;
+    height:auto;
+    display:block;
+    border-radius:18px;
+    background:#eef6fc;
+  }
+
+  .coverage-note{
+    max-width:760px;
+    margin:.75rem auto 0;
+    color:var(--ink-soft);
+    font-size:.88rem;
+    text-align:center;
+  }
+
+  .coverage-panels{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:1rem;
+    max-width:960px;
+    margin:1.25rem auto 0;
+  }
+
+  .location-panel{
+    margin-top:0;
+    padding:1.1rem 1.2rem;
+    border-radius:16px;
+    border:1px solid var(--line);
+    background:#fff;
+    box-shadow:0 14px 34px -26px rgba(14,79,134,.5);
+  }
+
+  .residential-panel{
+    border-left:5px solid var(--green);
+  }
+
+  .commercial-panel{
+    border-left:5px solid var(--blue);
+  }
+
+  .location-kicker{
+    font-size:.7rem;
+    font-weight:800;
+    letter-spacing:.1em;
+    text-transform:uppercase;
+    color:var(--ink-soft);
+  }
+
+  .location-panel h3{
+    font-size:1.16rem;
+    color:var(--blue-deep);
+    margin:.28rem 0 .65rem;
+  }
+
+  .coverage-panels .chips{
+    gap:.42rem;
+  }
+
+  .coverage-panels .chip{
+    padding:.38rem .72rem;
+    font-size:.84rem;
+  }
+
   .scale-proof{position:relative;min-height:620px;padding:0;display:grid;align-items:end;overflow:hidden;background:var(--blue-ink);}
   .scale-photo{position:absolute;inset:0;}.scale-photo::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(3,30,51,.92) 0%,rgba(3,30,51,.68) 48%,rgba(3,30,51,.2) 100%);}.scale-photo img{width:100%;height:100%;object-fit:cover;}
   .scale-copy{position:relative;z-index:2;width:100%;padding-block:clamp(70px,9vw,125px);color:#fff;}
@@ -1210,12 +1558,323 @@
   .installation-fineprint-compact summary{cursor:pointer;font-weight:800;color:#6f4f12;}
 
   @media(max-width:1050px){
-    .hero-grid,.service-overview,.coverage-grid{grid-template-columns:1fr;}
-    .hero-copy{max-width:760px}.hero-copy h1{max-width:12ch}.service-intro{position:static;max-width:760px}.service-paths-stacked{max-width:850px}.coverage-copy{max-width:800px}.florida-map-card{max-width:650px;width:100%;}
+    .hero-grid,.service-overview{grid-template-columns:1fr;}
+    .hero-copy{max-width:760px}.hero-copy h1{max-width:12ch}.service-intro{position:static;max-width:760px}.service-paths-stacked{max-width:850px}
   }
   @media(max-width:720px){
     .hero-grid{padding-block:46px}.hero-photo,.hero-photo img{min-height:320px}.trust-stats{grid-template-columns:1fr 1fr;text-align:left}.trust-stat:nth-child(3){border-left:0;padding-left:0}.service-path-with-photo,.service-path-with-photo.photo-left{padding:125px 1.35rem 1.5rem;}.service-circle-photo,.photo-left .service-circle-photo{width:150px;height:150px;left:50%;right:auto;top:-38px;transform:translateX(-50%);}.scale-proof{min-height:560px}.scale-photo::after{background:linear-gradient(0deg,rgba(3,30,51,.94) 0%,rgba(3,30,51,.58) 62%,rgba(3,30,51,.18) 100%);}
+
+    .coverage-editorial{
+      padding-block:58px 70px;
+    }
+
+    .coverage-intro{
+      text-align:left;
+      margin-bottom:1.3rem;
+    }
+
+    .coverage-intro h2{
+      max-width:13ch;
+      margin-left:0;
+      margin-right:0;
+    }
+
+    .coverage-intro p{
+      margin-left:0;
+      margin-right:0;
+    }
+
+    .coverage-map-wrap{
+      width:100%;
+    }
+
+    .coverage-panels{
+      grid-template-columns:1fr;
+    }
+
+    .florida-map-card{
+      padding:.7rem;
+      border-radius:22px;
+    }
+
+    .florida-service-map{
+      border-radius:15px;
+    }
+
+
+    .coverage-note{
+      text-align:left;
+    }
   }
+
+  /* Mobile trust ribbon: keep it short and readable */
+  @media(max-width:720px){
+    .trust-ribbon .wrap{
+      max-width:100%;
+      padding-inline:14px;
+    }
+
+    .trust-stats{
+      grid-template-columns:repeat(3,1fr);
+      gap:0;
+      text-align:center;
+      padding-block:.9rem .85rem;
+    }
+
+    .trust-stat{
+      padding:0 .55rem;
+      border-left:1px solid rgba(255,255,255,.18);
+    }
+
+    .trust-stat:first-child{
+      border-left:0;
+    }
+
+    .trust-stat:nth-child(3),
+    .trust-stat:nth-child(5){
+      display:none;
+    }
+
+    .trust-stat:nth-child(4){
+      border-left:1px solid rgba(255,255,255,.18);
+      padding-left:.55rem;
+    }
+
+    .trust-stat strong{
+      white-space:nowrap;
+      font-size:clamp(.95rem,4vw,1.12rem);
+      line-height:1.05;
+    }
+
+    .trust-stat span{
+      display:block;
+      margin-top:.25rem;
+      font-size:.68rem;
+      line-height:1.2;
+    }
+  }
+/* Mobile map modal: show the next steps after outlining */
+  @media(max-width:720px){
+    .map-modal .map-calc-layout{
+      grid-template-columns:1fr;
+      gap:.75rem;
+    }
+
+    .map-modal #sodMap{
+      height:42vh;
+      min-height:300px;
+    }
+
+    .map-modal .map-results{
+      position:static;
+      padding:1rem;
+      border-top:5px solid var(--green);
+    }
+
+    .map-modal .map-results h3{
+      font-size:1.2rem;
+      margin-bottom:.45rem;
+    }
+
+    .map-modal .map-instructions{
+      font-size:.82rem;
+      margin-bottom:.65rem;
+    }
+
+    .map-modal .map-metric{
+      padding:.48rem 0;
+    }
+
+    .map-modal .map-result-actions{
+      position:sticky;
+      bottom:0;
+      z-index:10;
+      background:#fff;
+      padding:.75rem 0 0;
+      margin-top:.8rem;
+      box-shadow:0 -12px 24px -24px rgba(0,0,0,.55);
+    }
+
+    .map-modal .map-result-actions .btn{
+      padding:.78em 1em;
+      font-size:.92rem;
+    }
+  }
+
+
+  /* Mobile map modal: larger tap targets and safer sticky actions */
+  @media(max-width:720px){
+    .map-modal .map-result-actions{
+      display:grid;
+      gap:.85rem;
+      padding:.85rem 0 max(.85rem, env(safe-area-inset-bottom));
+      pointer-events:auto;
+    }
+
+    .map-modal .map-result-actions .btn{
+      min-height:52px;
+      padding:1em 1.1em;
+      font-size:1rem;
+      line-height:1.15;
+      border-radius:999px;
+      touch-action:manipulation;
+      -webkit-tap-highlight-color:transparent;
+    }
+
+    .map-modal .map-result-actions .btn:disabled{
+      opacity:.55;
+      cursor:not-allowed;
+      pointer-events:none;
+    }
+
+    .map-modal .map-card,
+    .map-modal #sodMap{
+      touch-action:auto;
+    }
+
+    .map-modal .leaflet-container{
+      touch-action:pan-x pan-y;
+    }
+  }
+
+
+  /* Mobile service buttons: bigger tap targets and no overlay interference */
+  .service-path{
+    isolation:isolate;
+  }
+
+  .service-path-content,
+  .service-actions{
+    position:relative;
+    z-index:3;
+  }
+
+  .service-circle-photo{
+    z-index:1;
+    pointer-events:none;
+  }
+
+  .service-route-btn,
+  .project-flow-btn,
+  .service-text-link{
+    position:relative;
+    z-index:5;
+    pointer-events:auto;
+    touch-action:manipulation;
+    -webkit-tap-highlight-color:transparent;
+  }
+
+  @media(max-width:720px){
+    .service-actions{
+      gap:.95rem;
+      width:100%;
+    }
+
+    .service-actions .btn,
+    .service-route-btn,
+    .project-flow-btn{
+      min-height:58px;
+      padding:1.05em 1.2em;
+      font-size:1rem;
+      line-height:1.15;
+      border-radius:999px;
+    }
+
+    .service-actions .project-flow-btn,
+    .mobile-bar .project-flow-btn,
+    footer .project-flow-btn{
+      width:100%;
+    }
+
+    .service-text-link{
+      display:inline-flex;
+      align-items:center;
+      min-height:44px;
+      padding:.25rem 0;
+      font-size:1rem;
+    }
+  }
+
+
+  /* Mobile/tablet trust ribbon: keep captions visible */
+  @media(max-width:900px){
+    .trust-ribbon .wrap{
+      max-width:none;
+      width:100%;
+      padding-inline:12px;
+    }
+
+    .trust-stats{
+      display:grid;
+      grid-template-columns:repeat(3,minmax(0,1fr));
+      gap:0;
+      width:100%;
+      text-align:center;
+      padding-block:.85rem .8rem;
+    }
+
+    .trust-stat{
+      min-width:0;
+      padding:0 .45rem;
+      border-left:1px solid rgba(255,255,255,.22);
+    }
+
+    .trust-stat:first-child{
+      border-left:0;
+    }
+
+    .trust-stat:nth-child(3),
+    .trust-stat:nth-child(5){
+      display:none;
+    }
+
+    .trust-stat:nth-child(4){
+      display:block;
+      border-left:1px solid rgba(255,255,255,.22);
+      padding-left:.45rem;
+    }
+
+    .trust-stat strong{
+      display:block;
+      white-space:normal;
+      font-size:clamp(.95rem,3.8vw,1.18rem);
+      line-height:1.05;
+    }
+
+    .trust-stat span{
+      display:block !important;
+      margin:.25rem auto 0;
+      max-width:14ch;
+      font-size:clamp(.56rem,2.35vw,.72rem);
+      line-height:1.15;
+    }
+  }
+
+  @media(max-width:430px){
+    .trust-ribbon .wrap{
+      padding-inline:8px;
+    }
+
+    .trust-stats{
+      padding-block:.72rem .68rem;
+    }
+
+    .trust-stat{
+      padding:0 .35rem;
+    }
+
+    .trust-stat strong{
+      font-size:clamp(.9rem,4.6vw,1.08rem);
+    }
+
+    .trust-stat span{
+      display:block !important;
+      max-width:13ch;
+      font-size:clamp(.53rem,2.45vw,.66rem);
+      line-height:1.12;
+    }
+  }
+
 
 </style>
 
@@ -1238,7 +1897,7 @@
 <header class="nav" id="nav">
   <div class="wrap">
     <div class="nav-top">
-      <a class="brand" href="#top"><img src="images/agriscape-logo.jpg" alt="AgriScape Sod Service" /></a>
+      <a class="brand" href="#top"><img src="images/favicon.png" alt="AgriScape Sod Service" /></a>
       <div class="nav-actions">
         <!-- GOOGLE REVIEWS BADGE — links to your Google listing.
              Set the rating + count below to your current Google numbers.
@@ -1252,17 +1911,17 @@
             <span class="gcount" id="gCount">Read our Google reviews</span>
           </span>
         </a>
-        <a class="nav-phone" href="tel:+18332474763">📞 833-247-4763</a>
-        <button class="btn btn-primary" onclick="openWizard()">Get pricing</button>
+        <a class="nav-phone" href="tel:+18332474763">📞 833-AGRI-SOD</a>
+        <button class="btn btn-primary project-flow-btn" type="button" onclick="routeProjectFlow(event)">Schedule now</button>
         <button class="menu-btn" id="menuBtn" aria-label="Menu"><span></span><span></span><span></span></button>
       </div>
     </div>
     <nav class="nav-row" id="navRow">
       <a href="#services">Services</a>
-      <a href="#measure-lawn">Measure Your Lawn</a>
+      <a href="#" onclick="openMapCalculator(); return false;">Measure Your Lawn</a>
       <a href="#coverage">Service Area</a>
       <a href="#reviews">Reviews</a>
-      <a href="#articles">Resources</a>
+      <!-- Resources link hidden until article pages are ready: <a href="#articles">Resources</a> -->
       <a href="#contact">Contact</a>
     </nav>
   </div>
@@ -1272,18 +1931,17 @@
 <section class="hero hero-split" id="top" style="padding:0;">
   <div class="wrap hero-grid">
     <div class="hero-copy reveal">
-      <span class="eyebrow on-dark">Florida-grown sod delivery and installation</span>
-      <h1>Fresh-cut sod, delivered or installed right.</h1>
-      <p class="sub">From backyard lawn replacements to large commercial projects, AgriScape grows, delivers, and installs Florida sod across Southwest and Central Florida.</p>
+      <span class="eyebrow on-dark"></span>
+      <h1>Instant&nbsp;lawn. Zero&nbsp;back&nbsp;pain.</h1>
+      <p class="sub">Delivery, installation, and real guidance from a local sod grower, not a middleman.</p>
+         <br>
       <div class="cta-row">
-        <button class="btn btn-primary" onclick="openDeliveryWizard()">Get delivery pricing</button>
-        <a class="btn btn-out-light" href="#measure-lawn">Measure my lawn</a>
+        <button class="btn btn-primary project-flow-btn" type="button" onclick="routeProjectFlow(event)">Tell us about your project</button>
       </div>
-      <p class="callline">Need help choosing? Call or text <a href="tel:+18332474763">833-247-4763</a>.</p>
+      <p class="callline">Prefer to talk? Call or text <a href="tel:+18332474763">833-247-4763</a>.</p>
     </div>
-    <div class="hero-photo reveal" aria-label="AgriScape sod project photo placeholder">
+    <div class="hero-photo reveal" aria-label="AgriScape sod project">
       <img src="images/hero-sod.jpg" alt="Freshly installed Florida sod project" />
-      <div class="hero-photo-note">Freshly harvested. Professionally handled. Ready to root.</div>
     </div>
   </div>
 </section>
@@ -1292,12 +1950,12 @@
 <section class="trust-ribbon" aria-label="Why customers trust AgriScape">
   <div class="wrap">
     <div class="trust-stats">
-      <div class="trust-stat"><strong>Since 2012</strong><span>Family-owned in Florida</span></div>
-      <div class="trust-stat"><strong>Fresh-cut</strong><span>Harvested close to delivery</span></div>
-      <div class="trust-stat"><strong>Millions of sq. ft.*</strong><span>Installed across Florida</span></div>
-      <div class="trust-stat"><strong>Homes to large projects</strong><span>Delivery and installation capacity</span></div>
+      <div class="trust-stat"><strong>16 Years</strong><span>Family-owned in Florida since 2012</span></div>
+      <div class="trust-stat"><strong>24 Hours</strong><span>Max time from harvest to delivery</span></div>
+      <div class="trust-stat"><strong>12 Unique Varieties</strong><span>St. Augustine, Zoysia, Bermuda, and Bahia</span></div>
+      <div class="trust-stat"><strong>4.7 Stars</strong><span>Customer-approved quality</span></div>
+      <div class="trust-stat"><strong>100% Florida-Grown</strong><span>Grown for Florida lawns</span></div>
     </div>
-    <p class="trust-footnote">*Replace with a verified square-footage figure before publishing.</p>
   </div>
 </section>
 
@@ -1305,10 +1963,10 @@
 <section id="services" class="services-editorial">
   <div class="wrap service-overview">
     <div class="service-intro reveal">
-      <span class="eyebrow">Choose your path</span>
-      <h2>Get fresh sod delivered, or let us handle the entire lawn.</h2>
-      <p>Start with the option that matches your project. Both paths can use your map measurement, so you only enter the property details once.</p>
-      <a class="text-arrow" href="#measure-lawn">Measure the property first →</a>
+      <span class="eyebrow">WE'VE GOT YOU COVERED</span>
+      <h2>Fresh-cut sod</h2>
+      <p>Grown close to home. Installed by people who know grass.</p>
+      <a class="text-arrow" href="#" onclick="openMapCalculator(); return false;">Tell us about your project</a>
     </div>
 
     <div class="service-paths service-paths-stacked">
@@ -1318,16 +1976,15 @@
         </div>
         <div class="service-path-content">
           <span class="service-label">Sod delivery</span>
-          <h3>Fresh sod delivered to your property.</h3>
-          <p>Choose the grass, estimate your quantity, and request local delivery pricing for your home, crew, or project.</p>
+          <h3>Fresh sod delivered where you need it.</h3>
+          <p>Pick your grass type, estimate your quantity, and request local delivery pricing for your home, crew, or project.</p>
           <ul class="service-points">
-            <li>Florida-grown and freshly harvested</li>
-            <li>Several Florida grass varieties</li>
-            <li>Local delivery available</li>
+            <li>Florida-grown sod, freshly cut</li>
+            <li>Popular grass varieties available</li>
+            <li>Local delivery for homes and projects</li>
           </ul>
           <div class="service-actions">
-            <button class="btn btn-primary" onclick="openDeliveryWizard()">Get delivery pricing</button>
-            <a class="service-text-link" href="#measure-lawn">Measure your lawn on the map →</a>
+            <button class="btn btn-primary service-route-btn" type="button" onclick="routeServiceButton(event,'delivery')">Get delivery pricing</button>
           </div>
         </div>
       </article>
@@ -1338,106 +1995,18 @@
         </div>
         <div class="service-path-content">
           <span class="service-label">Full-service installation</span>
-          <h3>We prepare, install, and clean up.</h3>
-          <p>Tell us about the property and we’ll prepare a planning estimate before confirming conditions during the free site review.</p>
+          <h3>We prep the yard and lay the sod.</h3>
+          <p>Tell us about the property, get a planning estimate, and we’ll confirm site conditions before installation.</p>
           <ul class="service-points">
-            <li>Existing lawn removal</li>
-            <li>Ground preparation and grading</li>
-            <li>Fresh sod installation and cleanup</li>
+            <li>Old lawn removal</li>
+            <li>Ground prep and grading</li>
+            <li>Sod installation and cleanup</li>
           </ul>
           <div class="service-actions">
-            <button class="btn btn-blue" onclick="openInstallationWizard()">Estimate installation</button>
-            <a class="service-text-link" href="#measure-lawn">Measure your lawn on the map →</a>
+            <button class="btn btn-blue service-route-btn" type="button" onclick="routeServiceButton(event,'installation')">Estimate installation</button>
           </div>
         </div>
       </article>
-    </div>
-  </div>
-</section>
-
-<!-- ===== Map sod calculator ===== -->
-<section id="measure-lawn" class="band-blue measurement-feature">
-  <div class="wrap">
-    <div class="measure-heading reveal">
-      <span class="eyebrow">The easier way to plan a sod project</span>
-      <h2>Measure your lawn from the map.</h2>
-      <p>Search the property, outline each grass area, and get a recommended sod quantity with overage for cuts and fitting.</p>
-    </div>
-
-    <div class="map-calc-layout">
-      <div class="map-card reveal">
-        <div class="map-search">
-          <input id="mapAddress" type="search" placeholder="Enter a property address" autocomplete="street-address" aria-label="Property address" />
-          <button class="btn btn-blue" id="mapSearchBtn" type="button">Find property</button>
-        </div>
-        <div id="sodMap" aria-label="Interactive aerial map for outlining lawn areas"></div>
-        <div class="map-status" id="mapStatus">Search for an address, then use the polygon tool to outline the grass.</div>
-      </div>
-
-      <aside class="map-results reveal">
-        <span class="eyebrow">Your project</span>
-        <h3>Measure once. Use it for either quote.</h3>
-        <ol class="map-instructions">
-          <li>Search the property address.</li>
-          <li>Use the polygon tool to outline each lawn area.</li>
-          <li>Review the quantity and continue to delivery or installation.</li>
-        </ol>
-        <div class="map-metric"><span>Measured area</span><strong id="mapMeasuredSqFt">0 sq. ft.</strong></div>
-        <div class="map-metric"><span>Recommended overage</span><strong id="mapWasteSqFt">0 sq. ft.</strong></div>
-        <div class="map-metric"><span>Recommended sod total</span><strong id="mapAdjustedSqFt">0 sq. ft.</strong></div>
-        <div class="map-metric primary"><span>Estimated pallets</span><strong id="mapPallets">0</strong></div>
-        <div class="map-result-actions">
-          <button class="btn btn-primary" id="useMapEstimate" type="button" disabled>Get delivery pricing</button>
-          <button class="btn btn-blue" id="useMapInstallationEstimate" type="button" disabled>Estimate installation*</button>
-          <button class="btn btn-mini-ghost" id="clearMapShapes" type="button">Clear outlined areas</button>
-        </div>
-        <p class="map-disclaimer">*Installation pricing is a planning range. Final pricing follows a free site review and verified measurement. Map measurements may differ from field measurements.</p>
-      </aside>
-    </div>
-  </div>
-</section>
-
-
-
-<!-- ===== Regional coverage ===== -->
-<section id="coverage" class="coverage-editorial">
-  <div class="wrap coverage-grid">
-    <div class="coverage-copy reveal">
-      <span class="eyebrow">Where we work</span>
-      <h2>Local residential service. Broader project capacity.</h2>
-      <p>Based in Arcadia, AgriScape serves homeowners across Southwest Florida and supports larger commercial and government work across a wider service area.</p>
-
-      <div class="location-panel residential-panel">
-        <span class="location-kicker">Residential delivery and installation</span>
-        <h3>Southwest Florida communities</h3>
-        <div class="chips">
-          <span class="chip">Arcadia</span><span class="chip">Bradenton</span><span class="chip">Sarasota</span>
-          <span class="chip">Venice</span><span class="chip">North Port</span><span class="chip">Port Charlotte</span>
-          <span class="chip">Punta Gorda</span><span class="chip">Fort Myers</span><span class="chip">Cape Coral</span>
-        </div>
-      </div>
-
-      <div class="location-panel commercial-panel">
-        <span class="location-kicker">Commercial and government</span>
-        <h3>Larger Florida projects</h3>
-        <div class="chips">
-          <span class="chip">Southwest Florida</span><span class="chip">Tampa Bay</span>
-          <span class="chip">Central Florida</span><span class="chip">Statewide by project</span>
-        </div>
-      </div>
-    </div>
-
-    <div class="florida-map-card reveal" aria-label="Stylized Florida service area map">
-      <svg viewBox="0 0 430 560" role="img" aria-labelledby="flTitle flDesc">
-        <title id="flTitle">AgriScape Florida service areas</title>
-        <desc id="flDesc">A stylized Florida map showing Southwest Florida as the residential core and broader Florida commercial project coverage.</desc>
-        <path class="fl-state" d="M122 37 C166 29 236 39 285 54 L306 88 292 120 308 155 295 190 312 226 299 263 323 306 315 348 343 390 334 429 353 470 337 514 314 525 292 495 277 459 254 420 225 387 206 350 182 326 164 292 145 261 127 230 111 198 88 169 74 134 87 99 107 75 Z"/>
-        <path class="fl-core" d="M111 198 C127 230 145 261 164 292 182 326 206 350 225 387 254 420 277 459 292 495 276 486 255 466 239 442 218 410 197 383 174 354 152 326 135 294 119 260 103 228 92 205 88 169 Z"/>
-        <circle class="map-pin home" cx="145" cy="286" r="9"/><text x="161" y="291">Residential core</text>
-        <circle class="map-pin project" cx="232" cy="173" r="9"/><text x="248" y="178">Larger projects</text>
-        <path class="map-route" d="M145 286 C175 258 204 226 232 173"/>
-      </svg>
-      <div class="map-legend"><span><i class="legend-core"></i>Residential core</span><span><i class="legend-project"></i>Commercial by project</span></div>
     </div>
   </div>
 </section>
@@ -1447,9 +2016,39 @@
   <div class="scale-photo"><img src="images/team-fleet.jpg" alt="AgriScape team, trucks, and equipment" /></div>
   <div class="wrap scale-copy reveal">
     <span class="eyebrow on-dark">Real crews. Real equipment.</span>
-    <h2>Built for backyard jobs and large Florida projects.</h2>
-    <p>AgriScape supports homeowners, contractors, developers, HOAs, and public-sector work with the crews, trucks, and equipment needed to handle projects of different sizes.</p>
-    <button class="btn btn-primary" onclick="openWizard()">Tell us about your project</button>
+    <h2>Not&nbsp;just&nbsp;two&nbsp;guys and&nbsp;a&nbsp;wheelbarrow.</h2>
+    <p>(Unless those guys also brought 12 semis and a tractor.)<br>Whether it’s a tight backyard rescue or a massive commercial development, just pull the trigger and we'll show up with the heavy equipment to handle it all.</p>
+    <button class="btn btn-primary project-flow-btn" type="button" onclick="routeProjectFlow(event)">Schedule now</button>
+  </div>
+</section>
+
+<!-- ===== Regional coverage ===== -->
+<section id="coverage" class="coverage-editorial">
+  <div class="wrap coverage-shell">
+    <div class="coverage-intro reveal">
+      <span class="eyebrow">Where we work</span>
+      <h2>From our fields to your front yard</h2>
+      <p>
+        AgriScape delivers and installs sod across Southwest Florida, including Arcadia,
+        Bradenton, Sarasota, Venice, North Port, Port Charlotte, Punta Gorda, Fort Myers,
+        and Cape Coral. Larger commercial and government projects are available across
+        our broader Florida service area.
+      </p>
+    </div>
+
+    <div class="coverage-map-wrap reveal">
+      <div class="florida-map-card" aria-label="AgriScape Florida county service area map">
+        <img
+          class="florida-service-map"
+          src="images/florida-service-map.png"
+          alt="Florida county map showing AgriScape residential delivery and installation areas and commercial large project service areas."
+        />
+      </div>
+      <p class="coverage-note">
+        Residential service is concentrated in Southwest Florida. Larger commercial, contractor, HOA, and government projects may be available across a wider Florida service area.
+      </p>
+    </div>
+
   </div>
 </section>
 
@@ -1470,6 +2069,7 @@
   </div>
 </section>
 
+<!--
 <!-- ===== Articles ===== -->
 <section id="articles">
   <div class="wrap">
@@ -1485,6 +2085,7 @@
     </div>
   </div>
 </section>
+-->
 
 
 <!-- ===== FAQ ===== -->
@@ -1494,7 +2095,7 @@
       <span class="eyebrow">FAQ</span><h2>Good questions, straight answers.</h2>
     </div>
     <div class="faq reveal">
-      <details><summary>How much does sod cost in Florida?</summary><p>It depends on square footage and grass variety. Use the instant estimate above for a ballpark, then request a free quote for exact, confirmed pricing — including free local delivery.</p></details>
+      <details><summary>How much does sod cost in Florida?</summary><p>It depends on square footage and grass variety. Measure your lawn on the map for a planning quantity, then continue to delivery pricing or a rough installation estimate before requesting a confirmed quote.</p></details>
       <details><summary>Do you deliver and install, or just supply?</summary><p>Both. We grow, deliver, and install — including old turf removal and ground prep — or deliver fresh-cut sod by the pallet or truckload.</p></details>
       <details><summary>How fresh is the sod?</summary><p>It's cut to order and harvested within 24 hours of delivery, so it arrives fresh and ready to root.</p></details>
       <details><summary>Do you handle large commercial and government projects?</summary><p>Yes — we have the fleet and crews to serve HOAs, developers, contractors, and public infrastructure projects across Florida. See our Commercial &amp; Government page for capacity details.</p></details>
@@ -1509,9 +2110,10 @@
     <h2 class="reveal">Ready to plan your sod project?</h2>
     <p class="reveal">Measure the property, request pricing, or talk with our team about the right next step.</p>
     <div class="cta-row reveal">
-      <button class="btn btn-primary" onclick="openWizard()">Get pricing</button>
-      <a class="btn btn-out-light" href="tel:+18332474763">Call 833-247-4763</a>
+      <button class="btn btn-primary project-flow-btn" type="button" onclick="routeProjectFlow(event)">Schedule now</button>
+      <a class="btn btn-out-light" href="#" onclick="openMapCalculator(); return false;">Measure your lawn on the map</a>
     </div>
+    <p class="callline reveal" style="margin-top:1rem;">Prefer to talk? <a href="tel:+18332474763" style="color:#fff; font-weight:700; text-decoration:underline;">Call or text 833-247-4763</a>.</p>
   </div>
 </section>
 
@@ -1529,7 +2131,6 @@
       <div><h4>Hours</h4>
         <div class="hours-row"><span>Mon–Fri</span><span>8:00a – 5:00p</span></div>
         <div class="hours-row"><span>Sat–Sun</span><span>Closed</span></div>
-        <button class="btn btn-primary" style="margin-top:1rem;" onclick="openWizard()">Get pricing</button>
       </div>
     </div>
     <div class="foot-bottom"><span>© 2025 AgriScape Sod Service — All rights reserved.</span><span><a href="#" style="display:inline;">Privacy Policy</a> · <a href="#" style="display:inline;">Terms</a></span></div>
@@ -1538,76 +2139,190 @@
 
 <!-- ===== Mobile sticky bar ===== -->
 <div class="mobile-bar">
-  <a class="btn btn-out-light" href="tel:+18332474763" style="border-color:rgba(255,255,255,.6);">Call</a>
-  <button class="btn btn-primary" onclick="openWizard()">Get pricing</button>
+  <button class="btn btn-primary project-flow-btn" type="button" onclick="routeProjectFlow(event)">Schedule now</button>
 </div>
 
-<!-- ===== SCHEDULE / SERVICE ROUTER MODAL ===== -->
-<div class="wz-overlay" id="wzOverlay" role="dialog" aria-modal="true" aria-labelledby="wzTitle">
-  <div class="wz">
+<!-- ===== BALLPARK ESTIMATOR MODAL ===== -->
+<div class="wz-overlay" id="bpOverlay" role="dialog" aria-modal="true" aria-labelledby="bpTitle">
+  <div class="wz" id="bpWz">
     <div class="wz-head">
       <div>
-        <div class="t" id="wzTitle">How can we help?</div>
-        <div class="s">Choose a service and we’ll point you to the right next step</div>
+        <div class="t" id="bpTitle">Get a Ballpark Estimate</div>
+        <div class="s" id="bpSubtitle">We’ll guide you through a few quick questions</div>
       </div>
-      <button class="wz-close" type="button" onclick="closeWizard()" aria-label="Close">×</button>
+      <button class="wz-close" type="button" onclick="closeBP()" aria-label="Close">×</button>
     </div>
 
-    <div class="wz-steps" id="wzSteps">
-      <div class="wz-step active" data-step="0"><div class="dot">1</div><div class="lab">Service</div></div>
-      <div class="wz-step" data-step="1"><div class="dot">2</div><div class="lab">Location</div></div>
-      <div class="wz-step" data-step="2"><div class="dot">3</div><div class="lab">Next step</div></div>
+    <!-- Dot progress bar -->
+    <div class="bp-prog" id="bpProg" style="padding:.65rem 1.3rem;border-bottom:1px solid var(--line);display:flex;align-items:center;gap:.75rem;flex-wrap:wrap;">
+      <span id="bpStepLabel" style="font-size:.82rem;font-weight:700;color:var(--blue-deep);min-width:160px;"></span>
+      <span id="bpDots" style="display:flex;gap:.45rem;"></span>
     </div>
 
-    <div class="wz-body" id="wzBody">
-      <div class="wz-panel show" data-panel="0">
-        <h3>What do you need?</h3>
+    <div class="wz-body" id="bpBody">
+
+      <!-- Panel: Project Details (hero entry only) -->
+      <div class="bp-panel" id="bp-details" style="display:none;">
+        <h3>What are you looking for?</h3>
         <div class="opt-grid">
-          <button class="opt" type="button" data-service="delivery">
-            <span class="oic">🚚</span>Delivery
-          </button>
+          <button class="opt bp-service-opt" type="button" data-service="delivery"><span class="oic">🚚</span>Sod Delivery</button>
+          <button class="opt bp-service-opt" type="button" data-service="installation"><span class="oic">🌱</span>Sod Installation</button>
+          <button class="opt bp-service-opt" type="button" data-service="notsure" style="grid-column:1/-1;"><span class="oic">💬</span>Not Sure Yet</button>
+        </div>
+        <div class="bp-error" id="bp-details-error"></div>
+      </div>
 
-          <button class="opt" type="button" data-service="installation">
-            <span class="oic">🌱</span>Installation
-          </button>
+      <!-- Panel: Not Sure Yet -->
+      <div class="bp-panel" id="bp-notsure" style="display:none;">
+        <h3>What can we help you with?</h3>
+        <div style="display:grid;gap:.55rem;margin-bottom:1.1rem;">
+          <label style="display:flex;align-items:flex-start;gap:.65rem;font-weight:400;"><input type="checkbox" name="nsHelp" value="grass" style="margin-top:.18rem;flex-shrink:0;"> Choosing the right grass</label>
+          <label style="display:flex;align-items:flex-start;gap:.65rem;font-weight:400;"><input type="checkbox" name="nsHelp" value="new"> New lawn installation</label>
+          <label style="display:flex;align-items:flex-start;gap:.65rem;font-weight:400;"><input type="checkbox" name="nsHelp" value="replace"> Replacing an existing lawn</label>
+          <label style="display:flex;align-items:flex-start;gap:.65rem;font-weight:400;"><input type="checkbox" name="nsHelp" value="delivery"> Sod delivery</label>
+          <label style="display:flex;align-items:flex-start;gap:.65rem;font-weight:400;"><input type="checkbox" name="nsHelp" value="commercial"> Commercial project</label>
+        </div>
+        <label for="bp-ns-name">Name</label>
+        <input id="bp-ns-name" type="text" autocomplete="name" style="margin-bottom:.7rem;" />
+        <label for="bp-ns-email">Email</label>
+        <input id="bp-ns-email" type="email" autocomplete="email" style="margin-bottom:.7rem;" />
+        <label for="bp-ns-phone">Phone</label>
+        <input id="bp-ns-phone" type="tel" autocomplete="tel" style="margin-bottom:.7rem;" />
+        <label for="bp-ns-notes">Project Notes <span style="font-weight:400;color:var(--ink-soft);">(optional)</span></label>
+        <input id="bp-ns-notes" type="text" style="margin-bottom:1.1rem;" />
+        <div style="display:grid;gap:.55rem;padding:1rem;background:var(--tint-blue);border:1px solid var(--line);border-radius:12px;margin-bottom:.5rem;">
+          <label style="display:flex;align-items:flex-start;gap:.65rem;font-weight:400;font-size:.9rem;"><input type="checkbox" name="nsConsult" value="grass" style="margin-top:.18rem;flex-shrink:0;"> I’d like Agriscapes to recommend the best grass for my property.</label>
+          <label style="display:flex;align-items:flex-start;gap:.65rem;font-weight:400;font-size:.9rem;"><input type="checkbox" name="nsConsult" value="soil" style="margin-top:.18rem;flex-shrink:0;"> I’d like Agriscapes to discuss whether soil improvement recommendations may benefit this project.</label>
+          <label style="display:flex;align-items:flex-start;gap:.65rem;font-weight:400;font-size:.9rem;"><input type="checkbox" name="nsConsult" value="weed" style="margin-top:.18rem;flex-shrink:0;"> I’d like Agriscapes to discuss whether weed and unwanted grass control may benefit this project.</label>
+        </div>
+        <div class="bp-error" id="bp-notsure-error"></div>
+      </div>
 
-          <button class="opt" type="button" data-service="unsure" style="grid-column:1 / -1;">
-            <span class="oic">💬</span>Not sure yet — help me decide
-          </button>
+      <!-- Panel: Measure Your Lawn (map embedded) -->
+      <div class="bp-panel" id="bp-map" style="display:none;">
+        <div class="map-calc-layout">
+          <div class="map-card">
+            <div class="map-search">
+              <input id="mapAddress" type="search" placeholder="Enter a property address" autocomplete="street-address" aria-label="Property address" />
+              <button class="btn btn-blue" id="mapSearchBtn" type="button">Find property</button>
+            </div>
+            <div id="sodMap" aria-label="Interactive aerial map for outlining lawn areas"></div>
+            <div class="map-status" id="mapStatus">Search for an address, then use the polygon tool to outline the grass.</div>
+          </div>
+          <aside class="map-results">
+            <span class="eyebrow">HOW IT WORKS</span>
+            <h3>Your yard, figured out in seconds.</h3>
+            <ol class="map-instructions">
+              <li>Enter your address to zoom in.</li>
+              <li>Use the polygon tool to outline your yard.</li>
+              <li>Review the quantity and continue.</li>
+            </ol>
+            <div class="map-metric"><span>Measured area</span><strong id="mapMeasuredSqFt">0 sq. ft.</strong></div>
+            <div class="map-metric"><span>Recommended overage</span><strong id="mapWasteSqFt">0 sq. ft.</strong></div>
+            <div class="map-metric"><span>Recommended sod total</span><strong id="mapAdjustedSqFt">0 sq. ft.</strong></div>
+            <div class="map-metric primary"><span>Estimated pallets</span><strong id="mapPallets">0</strong></div>
+            <div style="margin-top:.9rem;">
+              <button class="btn btn-mini-ghost" id="clearMapShapes" type="button" style="width:100%;">Clear outlined areas</button>
+            </div>
+            <p class="map-disclaimer" style="margin-top:.75rem;">Map measurements are for planning. Final square footage confirmed on-site.</p>
+          </aside>
+        </div>
+        <div class="bp-error" id="bp-map-error" style="padding:.5rem 0 0;"></div>
+      </div>
+
+      <!-- Panel: Grass Family -->
+      <div class="bp-panel" id="bp-grass" style="display:none;">
+        <div id="bpSizeBadge" style="display:none;margin-bottom:1rem;padding:.6rem .9rem;background:var(--tint-green);border:1px solid #d6e8c6;border-radius:10px;font-size:.9rem;font-weight:600;color:var(--blue-deep);"></div>
+        <h3>What grass are you interested in?</h3>
+        <div class="opt-grid">
+          <button class="opt bp-grass-opt" type="button" data-family="bahia"><span class="oic">🌾</span>Bahia</button>
+          <button class="opt bp-grass-opt" type="button" data-family="staugustine"><span class="oic">🌿</span>St. Augustine</button>
+          <button class="opt bp-grass-opt" type="button" data-family="zoysia"><span class="oic">🍃</span>Zoysia</button>
+          <button class="opt bp-grass-opt" type="button" data-family="bermuda"><span class="oic">☀️</span>Bermuda</button>
+          <button class="opt bp-grass-opt" type="button" data-family="notsure" style="grid-column:1/-1;"><span class="oic">🤔</span>Not Sure</button>
+        </div>
+        <div class="bp-error" id="bp-grass-error"></div>
+      </div>
+
+      <!-- Panel: Grass Variety -->
+      <div class="bp-panel" id="bp-variety" style="display:none;">
+        <div id="bpSizeBadge2" style="display:none;margin-bottom:1rem;padding:.6rem .9rem;background:var(--tint-green);border:1px solid #d6e8c6;border-radius:10px;font-size:.9rem;font-weight:600;color:var(--blue-deep);"></div>
+        <h3 id="bp-variety-title">Which variety?</h3>
+        <div class="delivery-grass-grid" id="bp-variety-grid"></div>
+        <div class="bp-error" id="bp-variety-error"></div>
+      </div>
+
+      <!-- Panel: Site Conditions (installation only) -->
+      <div class="bp-panel" id="bp-site" style="display:none;">
+        <div id="bpSizeBadge3" style="display:none;margin-bottom:1rem;padding:.6rem .9rem;background:var(--tint-green);border:1px solid #d6e8c6;border-radius:10px;font-size:.9rem;font-weight:600;color:var(--blue-deep);"></div>
+        <h3>Does existing turf need to be removed?</h3>
+        <div class="opt-grid" style="grid-template-columns:1fr 1fr;margin-bottom:1.4rem;">
+          <button class="opt bp-removal-opt" type="button" data-removal="yes"><span class="oic">✅</span>Yes</button>
+          <button class="opt bp-removal-opt" type="button" data-removal="no"><span class="oic">➖</span>No</button>
+        </div>
+        <h3>Is access to the work area obstructed?</h3>
+        <p style="color:var(--ink-soft);font-size:.9rem;margin:.3rem 0 .9rem;">Equipment access generally requires approximately 9 ft of width and height clearance and no septic or similar obstacles in the work area.</p>
+        <div class="opt-grid" style="grid-template-columns:1fr 1fr;">
+          <button class="opt bp-access-opt" type="button" data-access="yes"><span class="oic">⚠️</span>Yes</button>
+          <button class="opt bp-access-opt" type="button" data-access="no"><span class="oic">✅</span>No</button>
+        </div>
+        <div class="bp-error" id="bp-site-error"></div>
+      </div>
+
+      <!-- Panel: Estimated Investment -->
+      <div class="bp-panel" id="bp-estimate" style="display:none;">
+        <h3 id="bp-estimate-title">Estimated Investment</h3>
+        <div class="installation-summary">
+          <div class="installation-summary-row"><span>Project size</span><strong id="bpEstSqFt">—</strong></div>
+          <div class="installation-summary-row"><span>Grass</span><strong id="bpEstGrass">—</strong></div>
+          <div class="installation-summary-row primary"><span>Estimated range</span><strong id="bpEstRange">—</strong></div>
+        </div>
+        <div id="bpSmallNotice" style="display:none;margin:.75rem 0 0;padding:.65rem .9rem;background:#fff8ea;border:1px solid #d9b36c;border-radius:10px;font-size:.84rem;color:#594725;line-height:1.5;"></div>
+        <p style="margin:.9rem 0 0;color:var(--ink-soft);font-size:.82rem;font-style:italic;line-height:1.5;">Estimated investment range shown for planning purposes. Final recommendations may vary based on sunlight, irrigation, pets, traffic, and maintenance preferences.</p>
+      </div>
+
+      <!-- Panel: Contact Information -->
+      <div class="bp-panel" id="bp-contact" style="display:none;">
+        <h3>Your contact information</h3>
+        <div class="installation-contact-grid" style="margin-bottom:.7rem;">
+          <div><label for="bp-name">Name</label><input id="bp-name" type="text" autocomplete="name" /></div>
+          <div><label for="bp-phone">Phone</label><input id="bp-phone" type="tel" autocomplete="tel" /></div>
+        </div>
+        <label for="bp-email">Email</label>
+        <input id="bp-email" type="email" autocomplete="email" style="margin-bottom:1rem;" />
+        <div style="display:grid;gap:.55rem;padding:1rem;background:var(--tint-blue);border:1px solid var(--line);border-radius:12px;margin-bottom:.5rem;">
+          <label style="display:flex;align-items:flex-start;gap:.65rem;font-weight:400;font-size:.9rem;"><input type="checkbox" id="bp-consult-grass" style="margin-top:.18rem;flex-shrink:0;"> I’d like Agriscapes to recommend the best grass for my property.</label>
+          <label style="display:flex;align-items:flex-start;gap:.65rem;font-weight:400;font-size:.9rem;"><input type="checkbox" id="bp-consult-soil" style="margin-top:.18rem;flex-shrink:0;"> I’d like Agriscapes to discuss whether soil improvement recommendations may benefit this project.</label>
+          <label style="display:flex;align-items:flex-start;gap:.65rem;font-weight:400;font-size:.9rem;"><input type="checkbox" id="bp-consult-weed" style="margin-top:.18rem;flex-shrink:0;"> I’d like Agriscapes to discuss whether weed and unwanted grass control may benefit this project.</label>
+        </div>
+        <div class="bp-error" id="bp-contact-error"></div>
+      </div>
+
+      <!-- Success -->
+      <div class="bp-panel" id="bp-success" style="display:none;">
+        <div class="wz-success">
+          <div class="check">✓</div>
+          <h3>We’ll be in touch soon.</h3>
+          <p style="color:var(--ink-soft);">Your site visit request was received. Or call <a href="tel:+18332474763" style="color:var(--green-d);font-weight:700;">833-247-4763</a> to speak with us now.</p>
+          <button class="btn btn-mini-ghost" type="button" onclick="closeBP()" style="margin-top:.6rem;">Close</button>
         </div>
       </div>
 
-      <div class="wz-panel" data-panel="1">
-        <h3>Where is the project?</h3>
-        <label for="wzZip">ZIP code</label>
-        <input id="wzZip" type="text" inputmode="numeric" maxlength="5" placeholder="e.g. 34205" />
-        <div class="zipmsg" id="wzZipMsg"></div>
-      </div>
+    </div><!-- /wz-body -->
 
-      <div class="wz-panel" data-panel="2">
-        <div class="wz-route" id="wzRouteResult"></div>
-      </div>
-    </div>
-
-    <div class="wz-foot" id="wzFoot">
+    <div class="wz-foot" id="bpFoot">
       <a class="callrep" href="tel:+18332474763">📞 Call 833-247-4763</a>
-      <div>
-        <button class="btn btn-mini-ghost" id="wzBack" type="button" onclick="wzPrev()" style="display:none;">Back</button>
-        <button class="btn btn-primary" id="wzNext" type="button" onclick="wzNext()">Continue</button>
+      <div style="display:flex;gap:.6rem;">
+        <button class="btn btn-mini-ghost" id="bpBack" type="button" onclick="bpPrev()" style="display:none;">Back</button>
+        <button class="btn btn-primary" id="bpNext" type="button" onclick="bpNext()">Continue</button>
       </div>
     </div>
   </div>
 </div>
 
 
-<!-- ===== INSTALLATION ESTIMATE MODAL ===== -->
-<div
-  class="wz-overlay"
-  id="installationOverlay"
-  role="dialog"
-  aria-modal="true"
-  aria-labelledby="installationTitle"
->
+<!-- old installation + delivery modals removed — replaced by unified #bpOverlay above -->
+<div style="display:none;" id="installationOverlay" aria-hidden="true"><!-- removed -->
   <div class="wz">
 
     <div class="wz-head">
@@ -1673,6 +2388,36 @@
           <button class="delivery-choice installation-grass" type="button" data-grass="Empire Zoysia">
             Empire Zoysia
             <small>A dense turf with a fine-to-medium texture.</small>
+          </button>
+
+          <button class="delivery-choice installation-grass" type="button" data-grass="CitraZoy Zoysia">
+            CitraZoy Zoysia
+            <small>Fine-bladed zoysia with good Florida performance.</small>
+          </button>
+
+          <button class="delivery-choice installation-grass" type="button" data-grass="Icon Zoysia">
+            Icon Zoysia
+            <small>Dense zoysia with strong wear tolerance.</small>
+          </button>
+
+          <button class="delivery-choice installation-grass" type="button" data-grass="Bimini Bermuda">
+            Bimini Bermuda
+            <small>Fine-textured bermuda for sunny lawns.</small>
+          </button>
+
+          <button class="delivery-choice installation-grass" type="button" data-grass="Celebration Bermuda">
+            Celebration Bermuda
+            <small>Durable bermuda with strong heat tolerance.</small>
+          </button>
+
+          <button class="delivery-choice installation-grass" type="button" data-grass="CitraBlue St. Augustine">
+            CitraBlue St. Augustine
+            <small>Blue-green St. Augustine with shade tolerance.</small>
+          </button>
+
+          <button class="delivery-choice installation-grass" type="button" data-grass="Seville St. Augustine">
+            Seville St. Augustine
+            <small>Dwarf St. Augustine for a lower-growing lawn.</small>
           </button>
 
           <button class="delivery-choice installation-grass" type="button" data-grass="Argentine Bahia">
@@ -1742,9 +2487,7 @@
         <label class="installation-ack">
           <input id="installationAcknowledge" type="checkbox" />
           <span>
-            I understand this is a rough planning estimate, not a final quote.
-            AgriScape must verify the property, measurements, access, and site
-            conditions before confirming the installation price.
+            I understand this is a rough planning estimate. Final pricing depends on the site review.
           </span>
         </label>
 
@@ -1756,8 +2499,7 @@
         <h3>Request your free final quote</h3>
 
         <p style="color:var(--ink-soft); margin-top:0;">
-          Enter your contact information, then email the request or call us to
-          schedule the free on-site measurement and consultation.
+          We’ll confirm the measurement, access, and site conditions before final pricing.
         </p>
 
         <div class="installation-contact-grid">
@@ -1790,18 +2532,14 @@
             type="button"
             onclick="emailInstallationRequest()"
           >
-            Email my final quote request
+            Send quote request
           </button>
 
           <a class="btn btn-primary" href="tel:+18332474763">
-            Call 833-247-4763 for my free on-site quote
+            Call 833-247-4763
           </a>
         </div>
 
-        <p class="installation-required">
-          Emailing opens your device’s email app with the request filled in.
-          The website does not send the request automatically yet.
-        </p>
 
         <div class="installation-error" id="installationContactError"></div>
       </div>
@@ -1809,7 +2547,7 @@
     </div>
 
     <div class="wz-foot" id="installationFoot">
-      <a class="callrep" href="tel:+18332474763">📞 Free on-site consultation</a>
+      <a class="callrep" href="tel:+18332474763">📞 Call 833-247-4763</a>
 
       <div>
         <button
@@ -1836,8 +2574,8 @@
   </div>
 </div>
 
-<!-- ===== DELIVERY PRICING MODAL ===== -->
-<div class="wz-overlay" id="deliveryOverlay" role="dialog" aria-modal="true" aria-labelledby="deliveryTitle">
+<!-- delivery modal removed — replaced by unified #bpOverlay -->
+<div style="display:none;" id="deliveryOverlay" aria-hidden="true">
   <div class="wz">
     <div class="wz-head">
       <div>
@@ -1882,6 +2620,36 @@
           <button class="delivery-choice" type="button" data-grass="Empire Zoysia">
             Empire Zoysia
             <small>A dense turf with a fine-to-medium texture.</small>
+          </button>
+
+          <button class="delivery-choice" type="button" data-grass="CitraZoy Zoysia">
+            CitraZoy Zoysia
+            <small>Fine-bladed zoysia with good Florida performance.</small>
+          </button>
+
+          <button class="delivery-choice" type="button" data-grass="Icon Zoysia">
+            Icon Zoysia
+            <small>Dense zoysia with strong wear tolerance.</small>
+          </button>
+
+          <button class="delivery-choice" type="button" data-grass="Bimini Bermuda">
+            Bimini Bermuda
+            <small>Fine-textured bermuda for sunny lawns.</small>
+          </button>
+
+          <button class="delivery-choice" type="button" data-grass="Celebration Bermuda">
+            Celebration Bermuda
+            <small>Durable bermuda with strong heat tolerance.</small>
+          </button>
+
+          <button class="delivery-choice" type="button" data-grass="CitraBlue St. Augustine">
+            CitraBlue St. Augustine
+            <small>Blue-green St. Augustine with shade tolerance.</small>
+          </button>
+
+          <button class="delivery-choice" type="button" data-grass="Seville St. Augustine">
+            Seville St. Augustine
+            <small>Dwarf St. Augustine for a lower-growing lawn.</small>
           </button>
 
           <button class="delivery-choice" type="button" data-grass="Argentine Bahia">
@@ -2008,19 +2776,32 @@
     <div class="ph">How can we help?<small>Tap to get started</small></div>
     <a class="fab-act" href="tel:+18332474763"><span class="e">📞</span> Call now</a>
     <a class="fab-act" href="sms:+18332474763"><span class="e">💬</span> Text us</a>
-    <div class="fab-act" onclick="openWizard(); toggleFab();"><span class="e">📝</span> Get a free quote</div>
+    <div class="fab-act project-flow-btn" onclick="routeProjectFlow(event); toggleFab();"><span class="e">📝</span> Get a free quote</div>
     <a class="fab-act" href="https://www.google.com/maps?cid=3443456827260833520" target="_blank" rel="noopener"><span class="e">⭐</span> Leave a review</a>
   </div>
   <button class="fab-btn" id="fabBtn" onclick="toggleFab()" aria-label="Contact options">💬</button>
 </div>
 
 
+<div hidden aria-hidden="true">
+  <input id="sqftCalc" type="number" value="0" />
+  <select id="grassCalc">
+    <option data-small="1.85" data-large="1.55">St. Augustine Floratam</option>
+    <option data-small="1.95" data-large="1.65">St. Augustine Palmetto</option>
+    <option data-small="2.15" data-large="1.85">Zoysia</option>
+    <option data-small="1.75" data-large="1.45">Bahia</option>
+    <option data-small="1.95" data-large="1.65">Bermuda</option>
+  </select>
+  <span id="estOut"></span>
+  <span id="tierNote"></span>
+</div>
+
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 <script src="https://unpkg.com/@geoman-io/leaflet-geoman-free@2.19.3/dist/leaflet-geoman.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@turf/turf@7.3.0/turf.min.js"></script>
 
 <script>
-  // ---- header / nav ----
+  // ---- nav ----
   const nav = document.getElementById('nav');
   document.getElementById('menuBtn').addEventListener('click', () => nav.classList.toggle('open'));
   document.querySelectorAll('#navRow a').forEach(a => a.addEventListener('click', () => nav.classList.remove('open')));
@@ -2036,1131 +2817,517 @@
     let i = 0; setInterval(() => { s[i].classList.remove('active'); i=(i+1)%s.length; s[i].classList.add('active'); }, 5000);
   })();
 
-  // ---- instant estimate ----
+  // ---- hidden instant estimate (preserved for legacy) ----
   const sqftEl=document.getElementById('sqftCalc'), grassEl=document.getElementById('grassCalc'),
         out=document.getElementById('estOut'), tier=document.getElementById('tierNote');
   const BREAK=1600, LOW=0.90, HIGH=1.15;
   const fmt = n => '$' + (Math.round(n/10)*10).toLocaleString('en-US');
   function calc(){
     const sqft=parseFloat(sqftEl.value), opt=grassEl.options[grassEl.selectedIndex];
-    if(!sqft || sqft<=0){ out.textContent='— '; tier.textContent=''; return; }
+    if(!sqft||sqft<=0){ out.textContent=''; tier.textContent=''; return; }
     const small=sqft<BREAK, rate=parseFloat(small?opt.dataset.small:opt.dataset.large), mid=sqft*rate;
     out.textContent=fmt(mid*LOW)+' – '+fmt(mid*HIGH);
-    tier.textContent = small
-      ? (sqft>=BREAK-200 ? "Small-job rate — just under the 1,600 sq ft volume break; ask if a bit more area lowers your per-foot cost." : "Small-job rate applies (under 1,600 sq ft).")
-      : "Volume rate applied (1,600+ sq ft).";
   }
   sqftEl.addEventListener('input', calc); grassEl.addEventListener('change', calc);
 
-  // ---- SCHEDULE / SERVICE ROUTER ----
-  const overlay=document.getElementById('wzOverlay');
-  let wzStep=0;
-  const WZ_MAX=2;
-  const state={service:'',zip:'',residential:false};
-  let savedProjectZip='';
-  const residentialZipPrefixes=['342','341','339','340'];
+  // ===== BALLPARK ESTIMATOR ENGINE =====
+  const bpOverlay = document.getElementById('bpOverlay');
+  let bpStep = 0;
+  let bpCurrentPanel = '';
 
-  function openWizard(type=''){
-    state.service='';
-    state.zip=savedProjectZip;
-    state.residential=savedProjectZip
-      ? residentialZipPrefixes.includes(savedProjectZip.slice(0,3))
-      : false;
+  const bpState = {
+    entryPoint: 'project',
+    serviceType: '',
+    sqFt: 0,
+    pallets: 0,
+    grassFamily: '',
+    grassVariety: '',
+    removalNeeded: '',
+    accessObstructed: '',
+  };
 
-    document.getElementById('wzZip').value=savedProjectZip;
-    document.getElementById('wzRouteResult').innerHTML='';
+  const BP_LABELS = {
+    'bp-details':  'Project Details',
+    'bp-map':      'Measure Your Lawn',
+    'bp-grass':    'Grass Selection',
+    'bp-variety':  'Grass Selection',
+    'bp-site':     'Site Conditions',
+    'bp-estimate': 'Estimated Investment',
+    'bp-contact':  'Contact Information',
+    'bp-notsure':  'Tell Us More',
+  };
 
-    const zipMessage=document.getElementById('wzZipMsg');
-
-    if(savedProjectZip){
-      zipMessage.className=state.residential?'zipmsg ok':'zipmsg warn';
-      zipMessage.textContent=state.residential
-        ? '✓ This ZIP code is already saved and appears to be in our residential service area.'
-        : 'This ZIP code is already saved. We’ll confirm service availability.';
-    }else{
-      zipMessage.textContent='';
-    }
-
-    document.querySelectorAll('#wzOverlay .opt').forEach(option => {
-      option.classList.remove('sel');
-    });
-
-    if(type==='installation'){
-      state.service='installation';
-      document.querySelector('#wzOverlay .opt[data-service="installation"]')?.classList.add('sel');
-
-      if(savedProjectZip){
-        buildWizardRoute();
-        showStep(2);
-      }else{
-        showStep(1);
-      }
-    }else if(type==='delivery'){
-      state.service='delivery';
-      document.querySelector('#wzOverlay .opt[data-service="delivery"]')?.classList.add('sel');
-
-      if(savedProjectZip){
-        buildWizardRoute();
-        showStep(2);
-      }else{
-        showStep(1);
-      }
-    }else{
-      showStep(0);
-    }
-
-    overlay.classList.add('open');
-    document.body.style.overflow='hidden';
+  function getBpFlow() {
+    if (bpState.serviceType === 'notsure') return ['bp-notsure'];
+    const steps = [];
+    if (bpState.entryPoint === 'project') steps.push('bp-details');
+    steps.push('bp-map');
+    steps.push('bp-grass');
+    if (['staugustine','zoysia','bermuda'].includes(bpState.grassFamily)) steps.push('bp-variety');
+    if (bpState.serviceType === 'installation') steps.push('bp-site');
+    steps.push('bp-estimate');
+    steps.push('bp-contact');
+    return steps;
   }
 
-  function closeWizard(){
-    overlay.classList.remove('open');
-    document.body.style.overflow='';
+  function renderBpProgress(flow, currentIdx) {
+    document.getElementById('bpStepLabel').textContent = BP_LABELS[flow[currentIdx]] || '';
+    document.getElementById('bpDots').innerHTML = flow.map((_, i) =>
+      `<span style="width:10px;height:10px;border-radius:50%;background:${i<=currentIdx?'var(--blue)':'var(--line)'};display:inline-block;flex-shrink:0;"></span>`
+    ).join('');
   }
 
-  overlay.addEventListener('click',event => {
-    if(event.target===overlay) closeWizard();
-  });
-
-  document.addEventListener('keydown',event => {
-    if(event.key==='Escape' && overlay.classList.contains('open')){
-      closeWizard();
-    }
-  });
-
-  document.querySelectorAll('#wzOverlay .opt').forEach(option => {
-    option.addEventListener('click',() => {
-      document.querySelectorAll('#wzOverlay .opt').forEach(item => item.classList.remove('sel'));
-      option.classList.add('sel');
-      state.service=option.dataset.service;
-    });
-  });
-
-  function showStep(step){
-    wzStep=step;
-
-    document.querySelectorAll('#wzOverlay .wz-panel').forEach(panel => {
-      panel.classList.toggle('show',Number(panel.dataset.panel)===step);
-    });
-
-    document.querySelectorAll('#wzOverlay .wz-step').forEach(marker => {
-      const markerStep=Number(marker.dataset.step);
-      marker.classList.toggle('active',markerStep===step);
-      marker.classList.toggle('done',markerStep<step);
-    });
-
-    document.getElementById('wzBack').style.display=step>0?'inline-flex':'none';
-    document.getElementById('wzNext').style.display=step<WZ_MAX?'inline-flex':'none';
-  }
-
-  function wzPrev(){
-    if(wzStep>0) showStep(wzStep-1);
-  }
-
-  function wzNext(){
-    if(wzStep===0){
-      if(!state.service){
-        alert('Please choose delivery, installation, or “Not sure yet.”');
-        return;
-      }
-      showStep(1);
-      return;
-    }
-
-    if(wzStep===1){
-      const zip=document.getElementById('wzZip').value.trim();
-
-      if(!/^\d{5}$/.test(zip)){
-        alert('Please enter a valid 5-digit ZIP code.');
-        return;
-      }
-
-      state.zip=zip;
-      savedProjectZip=zip;
-      state.residential=residentialZipPrefixes.includes(zip.slice(0,3));
-      buildWizardRoute();
-      showStep(2);
-    }
-  }
-
-  document.getElementById('wzZip').addEventListener('input',function(){
-    const zip=this.value.trim();
-    const message=document.getElementById('wzZipMsg');
-
-    if(!/^\d{5}$/.test(zip)){
-      message.textContent='';
-      return;
-    }
-
-    if(residentialZipPrefixes.includes(zip.slice(0,3))){
-      message.className='zipmsg ok';
-      message.textContent='✓ This appears to be in our residential service area.';
-    }else{
-      message.className='zipmsg warn';
-      message.textContent='We’ll need to confirm service availability for this ZIP code.';
-    }
-  });
-
-  function scrollToMapFromWizard(){
-    closeWizard();
-
-    setTimeout(() => {
-      document.getElementById('measure-lawn')?.scrollIntoView({
-        behavior:'smooth',
-        block:'start'
+  function updateSizeBadges() {
+    if (bpState.sqFt > 0) {
+      const badge = 'Project Size: ' + Math.round(bpState.sqFt).toLocaleString('en-US') + ' sq ft';
+      ['bpSizeBadge','bpSizeBadge2','bpSizeBadge3'].forEach(id => {
+        const el = document.getElementById(id);
+        if (el) { el.textContent = badge; el.style.display = 'block'; }
       });
-
-      setTimeout(() => {
-        if(typeof sodMap!=='undefined' && sodMap){
-          sodMap.invalidateSize();
-        }
-      },500);
-    },100);
+    }
   }
 
-  function buildWizardRoute(){
-    const result=document.getElementById('wzRouteResult');
-
-    if(state.service==='delivery' && state.residential){
-      result.innerHTML=`
-        <div class="wz-route-card">
-          <h4>Delivery is available in your area</h4>
-          <p>Measure the lawn on the map, choose the grass type, and carry the calculated square footage and pallet count into the delivery-pricing flow.</p>
-        </div>
-        <div class="wz-route-actions">
-          <button class="btn btn-primary" type="button" onclick="scrollToMapFromWizard()">Measure your lawn on the map</button>
-          <a class="btn btn-blue" href="tel:+18332474763">Call 833-247-4763 to order now</a>
-        </div>
-        <p class="wz-route-note">Map measurements and emailed pricing are estimates. Grass availability, delivery timing, site access, and final order details must be confirmed.</p>
-      `;
-      return;
+  function showBpPanel(panelId) {
+    bpCurrentPanel = panelId;
+    document.querySelectorAll('.bp-panel').forEach(p => p.style.display = 'none');
+    const panel = document.getElementById(panelId);
+    if (panel) panel.style.display = 'block';
+    const isSuccess = panelId === 'bp-success';
+    document.getElementById('bpProg').style.display = isSuccess ? 'none' : 'flex';
+    document.getElementById('bpFoot').style.display = isSuccess ? 'none' : 'flex';
+    document.getElementById('bpBack').style.display = (bpStep > 0 || panelId === 'bp-notsure') ? 'inline-flex' : 'none';
+    const nextBtn = document.getElementById('bpNext');
+    nextBtn.textContent = (panelId === 'bp-notsure' || panelId === 'bp-contact') ? 'Schedule Site Visit' : 'Continue';
+    updateSizeBadges();
+    if (panelId === 'bp-variety') renderVarietyGrid();
+    if (panelId === 'bp-estimate') renderBpEstimate();
+    if (panelId === 'bp-map') setTimeout(() => { if (typeof sodMap !== 'undefined' && sodMap) sodMap.invalidateSize(); }, 250);
+    if (!isSuccess) {
+      if (panelId === 'bp-notsure') {
+        const nsFlow = bpState.entryPoint === 'project' ? ['bp-details','bp-notsure'] : ['bp-notsure'];
+        renderBpProgress(nsFlow, bpState.entryPoint === 'project' ? 1 : 0);
+      } else {
+        renderBpProgress(getBpFlow(), bpStep);
+      }
     }
-
-    if(state.service==='delivery'){
-      result.innerHTML=`
-        <div class="wz-route-card">
-          <h4>Let’s confirm delivery availability</h4>
-          <p>This ZIP code is outside the automatic residential service-area check. Call us and we’ll confirm whether delivery is available and what minimums apply.</p>
-        </div>
-        <div class="wz-route-actions">
-          <a class="btn btn-primary" href="tel:+18332474763">Call 833-247-4763</a>
-        </div>
-      `;
-      return;
-    }
-
-    if(state.service==='installation' && state.residential){
-      result.innerHTML=`
-        <div class="wz-route-card">
-          <h4>Installation is available in your area</h4>
-          <p>Speak with our team to schedule a free on-site measurement and exact quote, or outline the lawn on the map first for a rough planning estimate.</p>
-        </div>
-        <div class="wz-route-actions">
-          <a class="btn btn-primary" href="tel:+18332474763">Call for a free on-site consultation</a>
-          <button class="btn btn-blue" type="button" onclick="scrollToMapFromWizard()">Measure on the map for a rough installation estimate*</button>
-        </div>
-        <p class="wz-route-note">The map result is not a final installation quote. Removal, grading, drainage, irrigation, access, septic systems, soil, roots, obstacles, disposal, and verified measurements can change final pricing.</p>
-      `;
-      return;
-    }
-
-    if(state.service==='installation'){
-      result.innerHTML=`
-        <div class="wz-route-card">
-          <h4>Let’s confirm installation coverage</h4>
-          <p>Call our team so we can confirm whether the project is within our installation area and discuss the property.</p>
-        </div>
-        <div class="wz-route-actions">
-          <a class="btn btn-primary" href="tel:+18332474763">Call 833-247-4763</a>
-        </div>
-      `;
-      return;
-    }
-
-    result.innerHTML=`
-      <div class="wz-route-card">
-        <h4>We’ll help you choose the right path</h4>
-        <p>Call us and tell us about the property. We’ll help determine the grass type, whether delivery or installation makes more sense, and what to do next.</p>
-      </div>
-      <div class="wz-route-actions">
-        <a class="btn btn-primary" href="tel:+18332474763">Call 833-247-4763 for help</a>
-        ${state.residential ? `<button class="btn btn-blue" type="button" onclick="scrollToMapFromWizard()">Start by measuring the lawn</button>` : ''}
-      </div>
-    `;
   }
 
-  showStep(0);
+  function openBP(entryPoint) {
+    bpState.entryPoint = entryPoint || 'project';
+    bpState.serviceType = '';
+    bpState.sqFt = 0; bpState.pallets = 0;
+    bpState.grassFamily = ''; bpState.grassVariety = '';
+    bpState.removalNeeded = ''; bpState.accessObstructed = '';
+    bpStep = 0;
+    document.querySelectorAll('.bp-service-opt,.bp-grass-opt,.bp-removal-opt,.bp-access-opt').forEach(b => b.classList.remove('sel'));
+    document.querySelectorAll('[name="nsHelp"],[name="nsConsult"]').forEach(cb => cb.checked = false);
+    ['bp-ns-name','bp-ns-email','bp-ns-phone','bp-ns-notes','bp-name','bp-email','bp-phone'].forEach(id => {
+      const el = document.getElementById(id); if (el) el.value = '';
+    });
+    document.querySelectorAll('#bp-consult-grass,#bp-consult-soil,#bp-consult-weed').forEach(cb => cb.checked = false);
+    document.querySelectorAll('.bp-error').forEach(e => e.textContent = '');
+    ['bpSizeBadge','bpSizeBadge2','bpSizeBadge3'].forEach(id => {
+      const el = document.getElementById(id); if (el) el.style.display = 'none';
+    });
+    if (entryPoint === 'delivery') bpState.serviceType = 'delivery';
+    else if (entryPoint === 'installation') bpState.serviceType = 'installation';
+    else if (entryPoint === 'map') bpState.serviceType = 'delivery';
+    showBpPanel(getBpFlow()[0]);
+    bpOverlay.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
 
+  function closeBP() {
+    bpOverlay.classList.remove('open');
+    document.body.style.overflow = '';
+    setTimeout(() => { if (typeof sodMap !== 'undefined' && sodMap) sodMap.invalidateSize(); }, 100);
+  }
+
+  bpOverlay.addEventListener('click', e => { if (e.target === bpOverlay) closeBP(); });
+  document.addEventListener('keydown', e => { if (e.key === 'Escape' && bpOverlay.classList.contains('open')) closeBP(); });
+
+  function bpPrev() {
+    if (bpCurrentPanel === 'bp-notsure') {
+      bpState.serviceType = '';
+      document.querySelectorAll('.bp-service-opt').forEach(b => b.classList.remove('sel'));
+      bpStep = 0;
+      showBpPanel('bp-details');
+      return;
+    }
+    if (bpStep <= 0) return;
+    bpStep--;
+    showBpPanel(getBpFlow()[bpStep]);
+  }
+
+  function bpNext() {
+    const panelId = bpCurrentPanel;
+    if (panelId === 'bp-details') {
+      if (!bpState.serviceType) { document.getElementById('bp-details-error').textContent = 'Please choose an option to continue.'; return; }
+      if (bpState.serviceType === 'notsure') { showBpPanel('bp-notsure'); return; }
+      bpStep++;
+      showBpPanel(getBpFlow()[bpStep]);
+      return;
+    }
+    if (panelId === 'bp-notsure') { submitNotSure(); return; }
+    if (panelId === 'bp-map') {
+      if (bpState.sqFt < 1) { document.getElementById('bp-map-error').textContent = 'Please outline at least one area on the map before continuing.'; return; }
+      document.getElementById('bp-map-error').textContent = '';
+    }
+    if (panelId === 'bp-grass') {
+      if (!bpState.grassFamily) { document.getElementById('bp-grass-error').textContent = 'Please select a grass type.'; return; }
+      if (bpState.grassFamily === 'bahia') bpState.grassVariety = 'Argentine Bahia';
+      if (bpState.grassFamily === 'notsure') bpState.grassVariety = '';
+    }
+    if (panelId === 'bp-variety') {
+      if (!bpState.grassVariety) { document.getElementById('bp-variety-error').textContent = 'Please select a variety.'; return; }
+    }
+    if (panelId === 'bp-site') {
+      if (!bpState.removalNeeded || !bpState.accessObstructed) { document.getElementById('bp-site-error').textContent = 'Please answer both questions above.'; return; }
+    }
+    if (panelId === 'bp-contact') { submitBP(); return; }
+    bpStep++;
+    showBpPanel(getBpFlow()[bpStep]);
+  }
+
+  const VARIETIES = {
+    staugustine: [
+      { name: 'CitraBlue® St. Augustine', desc: 'Blue-green St. Augustine with shade tolerance.' },
+      { name: 'Palmetto® St. Augustine', desc: 'A soft-textured St. Augustine variety.' },
+      { name: 'Seville St. Augustine', desc: 'Dwarf St. Augustine for a lower-growing lawn.' },
+      { name: 'Floratam St. Augustine', desc: 'A common Florida lawn grass for sunny yards.' },
+      { name: 'Provista St. Augustine', desc: 'A slow-growing St. Augustine variety.' },
+      { name: 'Help me decide', desc: "We'll recommend the best fit for your property." },
+    ],
+    zoysia: [
+      { name: 'CitraZoy', desc: 'Fine-bladed zoysia with good Florida performance.' },
+      { name: 'Icon Zoysia', desc: 'Dense zoysia with strong wear tolerance.' },
+      { name: 'EMPIRE® Zoysia', desc: 'A dense turf with a fine-to-medium texture.' },
+      { name: 'Help me decide', desc: "We'll recommend the best fit for your property." },
+    ],
+    bermuda: [
+      { name: 'Celebration Bermuda', desc: 'Durable bermuda with strong heat tolerance.' },
+      { name: 'Bimini® Bermudagrass', desc: 'Fine-textured bermuda for sunny lawns.' },
+      { name: 'Help me decide', desc: "We'll recommend the best fit for your property." },
+    ],
+  };
+
+  function renderVarietyGrid() {
+    const grid = document.getElementById('bp-variety-grid');
+    const labels = { staugustine: 'St. Augustine', zoysia: 'Zoysia', bermuda: 'Bermuda' };
+    document.getElementById('bp-variety-title').textContent = 'Which ' + (labels[bpState.grassFamily] || '') + ' variety?';
+    const varieties = VARIETIES[bpState.grassFamily] || [];
+    grid.innerHTML = varieties.map(v =>
+      `<button class="delivery-choice bp-variety-btn" type="button" data-variety="${v.name}">${v.name}<small>${v.desc}</small></button>`
+    ).join('');
+    grid.querySelectorAll('.bp-variety-btn').forEach(btn => {
+      if (btn.dataset.variety === bpState.grassVariety) btn.classList.add('sel');
+      btn.addEventListener('click', () => {
+        grid.querySelectorAll('.bp-variety-btn').forEach(b => b.classList.remove('sel'));
+        btn.classList.add('sel');
+        bpState.grassVariety = btn.dataset.variety;
+        document.getElementById('bp-variety-error').textContent = '';
+      });
+    });
+  }
+
+  const BP_RATES = {
+    bahia:       { small: 1.75, large: 1.45 },
+    staugustine: { small: 1.95, large: 1.65 },
+    zoysia:      { small: 2.15, large: 1.85 },
+    bermuda:     { small: 1.95, large: 1.65 },
+    notsure:     { small: 2.15, large: 1.45 },
+  };
+  const BP_DELIVERY_RATES = {
+    bahia:       { small: 1.45, large: 1.20 },
+    staugustine: { small: 1.75, large: 1.45 },
+    zoysia:      { small: 2.10, large: 1.75 },
+    bermuda:     { small: 1.85, large: 1.55 },
+    notsure:     { small: 2.10, large: 1.20 },
+  };
+
+  function calculateBpRange() {
+    const sqFt = bpState.sqFt;
+    if (!sqFt || sqFt <= 0) return '—';
+    const family = bpState.grassFamily || 'notsure';
+    const isInstall = bpState.serviceType === 'installation';
+    const rates = isInstall ? BP_RATES : BP_DELIVERY_RATES;
+    const rate = rates[family] || rates.notsure;
+    const perSqFt = sqFt < BREAK ? rate.small : rate.large;
+    const mid = sqFt * perSqFt;
+    let lo = LOW, hi = HIGH;
+    if (bpState.accessObstructed === 'yes') { lo -= 0.08; hi += 0.10; }
+    return fmt(mid * lo) + ' – ' + fmt(mid * hi);
+  }
+
+  function renderBpEstimate() {
+    const sqFt = Math.round(bpState.sqFt);
+    const isInstall = bpState.serviceType === 'installation';
+    const isRipOut = isInstall && bpState.removalNeeded === 'yes';
+    let titleText = 'Estimated Delivery Investment';
+    if (isRipOut) titleText = 'Estimated Rip-Out & Replacement Investment';
+    else if (isInstall) titleText = 'Estimated Installation Investment';
+    document.getElementById('bp-estimate-title').textContent = titleText;
+    document.getElementById('bpEstSqFt').textContent = sqFt.toLocaleString('en-US') + ' sq ft';
+    const grassLabel = bpState.grassVariety ||
+      (bpState.grassFamily === 'bahia' ? 'Argentine Bahia' :
+       bpState.grassFamily === 'notsure' ? 'Not selected — widest range shown' :
+       bpState.grassFamily || '—');
+    document.getElementById('bpEstGrass').textContent = grassLabel;
+    document.getElementById('bpEstRange').textContent = calculateBpRange();
+    const notice = document.getElementById('bpSmallNotice');
+    if (sqFt > 0 && sqFt < 1000) {
+      notice.textContent = 'Small projects may be subject to minimum service charges. We’ll confirm final pricing after reviewing the property.';
+      notice.style.display = 'block';
+    } else { notice.style.display = 'none'; }
+  }
+
+  function submitNotSure() {
+    const name = document.getElementById('bp-ns-name').value.trim();
+    const phone = document.getElementById('bp-ns-phone').value.trim();
+    const email = document.getElementById('bp-ns-email').value.trim();
+    const err = document.getElementById('bp-notsure-error');
+    if (!name || !phone) { err.textContent = 'Please enter your name and phone number.'; return; }
+    if (email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { err.textContent = 'Please enter a valid email address or leave it blank.'; return; }
+    const helpItems = [...document.querySelectorAll('[name="nsHelp"]:checked')].map(cb => cb.value).join(', ');
+    const consultItems = [...document.querySelectorAll('[name="nsConsult"]:checked')].map(cb => cb.value).join(', ');
+    const notes = document.getElementById('bp-ns-notes').value.trim();
+    const subject = 'AgriScape: Help choosing the right sod';
+    const body = ['AgriScape site visit request','',
+      'Name: '+name,'Phone: '+phone,'Email: '+(email||'Not provided'),
+      'Help needed: '+(helpItems||'Not specified'),
+      'Project notes: '+(notes||'None'),
+      'Consultation interests: '+(consultItems||'None selected'),
+    ].join('\n');
+    window.location.href = 'mailto:info@agriscapesod.com?subject='+encodeURIComponent(subject)+'&body='+encodeURIComponent(body);
+    showBpPanel('bp-success');
+  }
+
+  function submitBP() {
+    const name = document.getElementById('bp-name').value.trim();
+    const phone = document.getElementById('bp-phone').value.trim();
+    const email = document.getElementById('bp-email').value.trim();
+    const err = document.getElementById('bp-contact-error');
+    if (!name || !phone) { err.textContent = 'Please enter your name and phone number.'; return; }
+    if (email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { err.textContent = 'Please enter a valid email address or leave it blank.'; return; }
+    err.textContent = '';
+    const isInstall = bpState.serviceType === 'installation';
+    const isRipOut = isInstall && bpState.removalNeeded === 'yes';
+    const grassLabel = bpState.grassVariety ||
+      (bpState.grassFamily === 'bahia' ? 'Argentine Bahia' :
+       bpState.grassFamily === 'notsure' ? 'Not sure' : bpState.grassFamily || 'Not selected');
+    const consults = [];
+    if (document.getElementById('bp-consult-grass').checked) consults.push('Grass recommendation');
+    if (document.getElementById('bp-consult-soil').checked) consults.push('Soil improvement');
+    if (document.getElementById('bp-consult-weed').checked) consults.push('Weed/grass control');
+    const svcLabel = isRipOut ? 'Rip-out & replacement' : isInstall ? 'Installation' : 'Delivery';
+    const subject = 'AgriScape site visit — ' + svcLabel;
+    const body = ['AgriScape site visit request','',
+      'Name: '+name,'Phone: '+phone,'Email: '+(email||'Not provided'),
+      'Service: '+svcLabel,
+      'Project size: '+Math.round(bpState.sqFt).toLocaleString('en-US')+' sq ft (approx. '+bpState.pallets+' pallets)',
+      'Grass: '+grassLabel,
+      'Estimated range: '+calculateBpRange(),
+      ...(isInstall ? [
+        'Existing turf removal: '+(bpState.removalNeeded==='yes'?'Yes':'No'),
+        'Access obstructed: '+(bpState.accessObstructed==='yes'?'Yes':'No'),
+      ] : []),
+      'Consultation interests: '+(consults.join(', ')||'None selected'),
+      '','This is a rough planning estimate. Final pricing follows a free site visit.',
+    ].join('\n');
+    window.location.href = 'mailto:info@agriscapesod.com?subject='+encodeURIComponent(subject)+'&body='+encodeURIComponent(body);
+    showBpPanel('bp-success');
+  }
+
+  // Wire option buttons
+  document.querySelectorAll('.bp-service-opt').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.bp-service-opt').forEach(b => b.classList.remove('sel'));
+      btn.classList.add('sel'); bpState.serviceType = btn.dataset.service;
+      document.getElementById('bp-details-error').textContent = '';
+    });
+  });
+  document.querySelectorAll('.bp-grass-opt').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.bp-grass-opt').forEach(b => b.classList.remove('sel'));
+      btn.classList.add('sel'); bpState.grassFamily = btn.dataset.family; bpState.grassVariety = '';
+      document.getElementById('bp-grass-error').textContent = '';
+    });
+  });
+  document.querySelectorAll('.bp-removal-opt').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.bp-removal-opt').forEach(b => b.classList.remove('sel'));
+      btn.classList.add('sel'); bpState.removalNeeded = btn.dataset.removal;
+      document.getElementById('bp-site-error').textContent = '';
+    });
+  });
+  document.querySelectorAll('.bp-access-opt').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.bp-access-opt').forEach(b => b.classList.remove('sel'));
+      btn.classList.add('sel'); bpState.accessObstructed = btn.dataset.access;
+      document.getElementById('bp-site-error').textContent = '';
+    });
+  });
+
+  // Entry-point routing
+  let serviceButtonLocked = false;
+  let projectFlowLocked = false;
+
+  function routeProjectFlow(event) {
+    event?.preventDefault(); event?.stopPropagation();
+    if (projectFlowLocked) return;
+    projectFlowLocked = true;
+    openBP('project');
+    setTimeout(() => { projectFlowLocked = false; }, 500);
+  }
+
+  function routeServiceButton(event, type) {
+    event?.preventDefault(); event?.stopPropagation();
+    if (serviceButtonLocked) return;
+    serviceButtonLocked = true;
+    openBP(type);
+    setTimeout(() => { serviceButtonLocked = false; }, 500);
+  }
+
+  function openMapCalculator() { openBP('map'); }
+
+  document.querySelectorAll('.service-route-btn').forEach(button => {
+    const type = button.getAttribute('onclick')?.includes('installation') ? 'installation' : 'delivery';
+    button.addEventListener('touchend', e => routeServiceButton(e, type), { passive: false });
+    button.addEventListener('pointerup', e => routeServiceButton(e, type));
+  });
+  document.querySelectorAll('.project-flow-btn').forEach(button => {
+    button.addEventListener('touchend', e => routeProjectFlow(e), { passive: false });
+    button.addEventListener('pointerup', e => routeProjectFlow(e));
+  });
 
   // ---- MAP SOD CALCULATOR ----
-  const mapEl=document.getElementById('sodMap');
-  let sodMap=null;
-  let mapMeasuredSqFt=0;
-  let mapAdjustedSqFt=0;
-  let mapPalletCount=0;
+  const mapEl = document.getElementById('sodMap');
+  let sodMap = null;
+  let mapMeasuredSqFt = 0;
+  let mapAdjustedSqFt = 0;
+  let mapPalletCount = 0;
 
-  function formatWholeNumber(value){
-    return Math.round(value).toLocaleString('en-US');
-  }
+  function formatWholeNumber(value) { return Math.round(value).toLocaleString('en-US'); }
 
-  function updateMapTotals(){
-    if(!sodMap) return;
-
-    let totalSquareMeters=0;
-
+  function updateMapTotals() {
+    if (!sodMap) return;
+    let totalSquareMeters = 0;
     sodMap.eachLayer(layer => {
-      if(layer instanceof L.Polygon && !(layer instanceof L.Rectangle)){
-        try{
-          totalSquareMeters += turf.area(layer.toGeoJSON());
-        }catch(error){
-          console.warn('Could not calculate polygon area:', error);
-        }
-      }
-
-      if(layer instanceof L.Rectangle){
-        try{
-          totalSquareMeters += turf.area(layer.toGeoJSON());
-        }catch(error){
-          console.warn('Could not calculate rectangle area:', error);
-        }
+      if (layer instanceof L.Polygon || layer instanceof L.Rectangle) {
+        try { totalSquareMeters += turf.area(layer.toGeoJSON()); } catch(e) {}
       }
     });
-
-    mapMeasuredSqFt=totalSquareMeters*10.7639104167;
-    const wasteSqFt=mapMeasuredSqFt*.08;
-    mapAdjustedSqFt=mapMeasuredSqFt+wasteSqFt;
-    mapPalletCount=mapAdjustedSqFt>0 ? Math.ceil(mapAdjustedSqFt/400) : 0;
-
-    document.getElementById('mapMeasuredSqFt').textContent=
-      `${formatWholeNumber(mapMeasuredSqFt)} sq. ft.`;
-
-    document.getElementById('mapWasteSqFt').textContent=
-      `${formatWholeNumber(wasteSqFt)} sq. ft.`;
-
-    document.getElementById('mapAdjustedSqFt').textContent=
-      `${formatWholeNumber(mapAdjustedSqFt)} sq. ft.`;
-
-    document.getElementById('mapPallets').textContent=
-      mapPalletCount.toLocaleString('en-US');
-
-    document.getElementById('useMapEstimate').disabled=mapPalletCount<1;
-    document.getElementById('useMapInstallationEstimate').disabled=mapMeasuredSqFt<1;
+    mapMeasuredSqFt = totalSquareMeters * 10.7639104167;
+    const wasteSqFt = mapMeasuredSqFt * .08;
+    mapAdjustedSqFt = mapMeasuredSqFt + wasteSqFt;
+    mapPalletCount = mapAdjustedSqFt > 0 ? Math.ceil(mapAdjustedSqFt / 400) : 0;
+    document.getElementById('mapMeasuredSqFt').textContent = formatWholeNumber(mapMeasuredSqFt) + ' sq. ft.';
+    document.getElementById('mapWasteSqFt').textContent = formatWholeNumber(wasteSqFt) + ' sq. ft.';
+    document.getElementById('mapAdjustedSqFt').textContent = formatWholeNumber(mapAdjustedSqFt) + ' sq. ft.';
+    document.getElementById('mapPallets').textContent = mapPalletCount.toLocaleString('en-US');
+    bpState.sqFt = mapMeasuredSqFt;
+    bpState.pallets = mapPalletCount;
+    if (mapMeasuredSqFt >= 1) document.getElementById('bp-map-error').textContent = '';
+    updateSizeBadges();
   }
 
-  function initializeSodMap(){
-    if(!mapEl || typeof L==='undefined') return;
-
-    sodMap=L.map('sodMap',{
-      center:[27.3364,-82.5307],
-      zoom:12,
-      minZoom:4,
-      maxZoom:20
-    });
-
-    const mapboxLayer=L.tileLayer(
+  function initializeSodMap() {
+    if (!mapEl || typeof L === 'undefined') return;
+    sodMap = L.map('sodMap', { center: [27.3364, -82.5307], zoom: 12, minZoom: 4, maxZoom: 20 });
+    const mapboxLayer = L.tileLayer(
       'https://api.mapbox.com/styles/v1/mapbox/satellite-v9/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoibWFydGhhanNvc2EiLCJhIjoiY21xbW1uNnE5MWVxdTJxcHpycXFzMjdmcCJ9.j64TWsKWJYXJodFdAPeweg',
-      {
-        tileSize:256,
-        maxZoom:20,
-        attribution:
-          '© <a href="https://www.mapbox.com/about/maps/" target="_blank" rel="noopener">Mapbox</a> ' +
-          '© <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a>'
-      }
+      { tileSize: 256, maxZoom: 20, attribution: '© <a href="https://www.mapbox.com/about/maps/" target="_blank" rel="noopener">Mapbox</a> © <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a>' }
     );
-
     mapboxLayer.addTo(sodMap);
-
     mapboxLayer.on('tileerror', () => {
-      document.getElementById('mapStatus').textContent=
-        'The satellite layer could not load. Check the Mapbox token URL restrictions and refresh the page.';
+      document.getElementById('mapStatus').textContent = 'The satellite layer could not load. Check the Mapbox token URL restrictions and refresh the page.';
     });
-
     sodMap.pm.addControls({
-      position:'topleft',
-      drawMarker:false,
-      drawCircleMarker:false,
-      drawPolyline:false,
-      drawCircle:false,
-      drawText:false,
-      drawPolygon:true,
-      drawRectangle:true,
-      editMode:true,
-      dragMode:false,
-      cutPolygon:false,
-      removalMode:true,
-      rotateMode:false
+      position: 'topleft', drawMarker: false, drawCircleMarker: false, drawPolyline: false,
+      drawCircle: false, drawText: false, drawPolygon: true, drawRectangle: true,
+      editMode: true, dragMode: false, cutPolygon: false, removalMode: true, rotateMode: false
     });
-
-    sodMap.on('pm:create', event => {
-      event.layer.on('pm:edit', updateMapTotals);
-      updateMapTotals();
-    });
-
+    sodMap.on('pm:create', event => { event.layer.on('pm:edit', updateMapTotals); updateMapTotals(); });
     sodMap.on('pm:remove', updateMapTotals);
     sodMap.on('pm:edit', updateMapTotals);
-
     setTimeout(() => sodMap.invalidateSize(), 150);
   }
 
-  async function searchMapAddress(){
-    const input=document.getElementById('mapAddress');
-    const status=document.getElementById('mapStatus');
-    const query=input.value.trim();
-
-    if(!query){
-      status.textContent='Enter a property address first.';
-      input.focus();
-      return;
-    }
-
-    status.textContent='Searching for the property…';
-    document.getElementById('mapSearchBtn').disabled=true;
-
-    try{
-      const endpoint=
-        'https://nominatim.openstreetmap.org/search?format=jsonv2&limit=1&countrycodes=us&q=' +
-        encodeURIComponent(query);
-
-      const response=await fetch(endpoint,{
-        headers:{'Accept':'application/json'}
-      });
-
-      if(!response.ok) throw new Error('Address search failed');
-
-      const results=await response.json();
-
-      if(!results.length){
-        status.textContent='We could not find that address. Try including the city, state, and ZIP code.';
-        return;
-      }
-
-      const result=results[0];
-      const lat=Number(result.lat);
-      const lon=Number(result.lon);
-
-      sodMap.setView([lat,lon],19);
-
-      status.textContent=
-        'Property found. Select the polygon tool, then click around each lawn area.';
-    }catch(error){
-      console.error(error);
-      status.textContent=
-        'The address search is temporarily unavailable. You can still move and zoom the map manually.';
-    }finally{
-      document.getElementById('mapSearchBtn').disabled=false;
+  async function searchMapAddress() {
+    const input = document.getElementById('mapAddress');
+    const status = document.getElementById('mapStatus');
+    const query = input.value.trim();
+    if (!query) { status.textContent = 'Enter a property address first.'; input.focus(); return; }
+    status.textContent = 'Searching for the property…';
+    document.getElementById('mapSearchBtn').disabled = true;
+    try {
+      const response = await fetch(
+        'https://nominatim.openstreetmap.org/search?format=jsonv2&limit=1&countrycodes=us&q=' + encodeURIComponent(query),
+        { headers: { 'Accept': 'application/json' } }
+      );
+      if (!response.ok) throw new Error('failed');
+      const results = await response.json();
+      if (!results.length) { status.textContent = 'We could not find that address. Try including the city, state, and ZIP code.'; return; }
+      sodMap.setView([Number(results[0].lat), Number(results[0].lon)], 19);
+      status.textContent = 'Property found. Select the polygon tool, then click around each lawn area.';
+    } catch(e) {
+      status.textContent = 'The address search is temporarily unavailable. You can still move and zoom the map manually.';
+    } finally {
+      document.getElementById('mapSearchBtn').disabled = false;
     }
   }
 
-  document.getElementById('mapSearchBtn')?.addEventListener('click',searchMapAddress);
-
-  document.getElementById('mapAddress')?.addEventListener('keydown',event => {
-    if(event.key==='Enter'){
-      event.preventDefault();
-      searchMapAddress();
-    }
-  });
-
-  document.getElementById('clearMapShapes')?.addEventListener('click',() => {
-    if(!sodMap) return;
-
-    const removable=[];
-
-    sodMap.eachLayer(layer => {
-      if(layer instanceof L.Polygon || layer instanceof L.Rectangle){
-        removable.push(layer);
-      }
-    });
-
+  document.getElementById('mapSearchBtn')?.addEventListener('click', searchMapAddress);
+  document.getElementById('mapAddress')?.addEventListener('keydown', e => { if (e.key === 'Enter') { e.preventDefault(); searchMapAddress(); } });
+  document.getElementById('clearMapShapes')?.addEventListener('click', () => {
+    if (!sodMap) return;
+    const removable = [];
+    sodMap.eachLayer(layer => { if (layer instanceof L.Polygon || layer instanceof L.Rectangle) removable.push(layer); });
     removable.forEach(layer => sodMap.removeLayer(layer));
     updateMapTotals();
-
-    document.getElementById('mapStatus').textContent=
-      'Outlined areas cleared. Draw a new polygon when ready.';
-  });
-
-  document.getElementById('useMapInstallationEstimate')?.addEventListener('click',() => {
-    if(mapMeasuredSqFt<1) return;
-    openInstallationWizard(Math.round(mapMeasuredSqFt));
-  });
-
-  document.getElementById('useMapEstimate')?.addEventListener('click',() => {
-    if(mapPalletCount<1) return;
-
-    openDeliveryWizard();
-
-    deliveryState.mode='pallets';
-    deliveryState.squareFeet=Math.round(mapAdjustedSqFt);
-    deliveryState.pallets=mapPalletCount;
-
-    document.querySelectorAll('.quantity-choice').forEach(button => {
-      button.classList.toggle('active',button.dataset.mode==='pallets');
-    });
-
-    document.getElementById('deliveryAreaFields').hidden=true;
-    document.getElementById('deliveryPalletFields').hidden=false;
-    document.getElementById('deliveryPallets').value=mapPalletCount;
-
-    document.getElementById('deliveryResult').textContent=
-      `${formatWholeNumber(mapMeasuredSqFt)} sq. ft. outlined, ` +
-      `${formatWholeNumber(mapAdjustedSqFt)} sq. ft. after the 8% allowance, ` +
-      `for approximately ${mapPalletCount} ${mapPalletCount===1?'pallet':'pallets'}.`;
-
-    document.getElementById('deliveryQuantityError').textContent='';
+    document.getElementById('mapStatus').textContent = 'Outlined areas cleared. Draw a new polygon when ready.';
   });
 
   initializeSodMap();
 
-
-  // ---- INSTALLATION ESTIMATE WIZARD ----
-  const installationOverlay=document.getElementById('installationOverlay');
-  let installationStep=0;
-  const INSTALLATION_MAX=2;
-
-  const installationState={
-    squareFeet:0,
-    grass:'',
-    range:'',
-    zip:''
-  };
-
-  function getInstallationRate(grassName,squareFeet){
-    const options=[...grassEl.options];
-    let option=options.find(item => item.text.trim()===grassName);
-
-    if(!option){
-      option=grassEl.options[grassEl.selectedIndex] || grassEl.options[0];
-    }
-
-    const useSmallRate=squareFeet<BREAK;
-    return Number(
-      useSmallRate
-        ? option.dataset.small
-        : option.dataset.large
-    );
-  }
-
-  function calculateInstallationRange(squareFeet,grassName){
-    if(!squareFeet || squareFeet<=0) return '';
-
-    const rate=getInstallationRate(grassName,squareFeet);
-    const midpoint=squareFeet*rate;
-
-    return `${fmt(midpoint*LOW)} – ${fmt(midpoint*HIGH)}`;
-  }
-
-  function openInstallationWizard(squareFeet=0){
-    installationStep=0;
-    installationState.squareFeet=Math.round(
-      Number(squareFeet) ||
-      Number(sqftEl.value) ||
-      mapMeasuredSqFt ||
-      0
-    );
-    installationState.grass='';
-    installationState.range='';
-    installationState.zip=savedProjectZip || '';
-
-    document.querySelectorAll('.installation-grass').forEach(button => {
-      button.classList.remove('sel');
-    });
-
-    document.getElementById('installationAcknowledge').checked=false;
-    document.getElementById('installationGrassError').textContent='';
-    document.getElementById('installationEstimateError').textContent='';
-    document.getElementById('installationContactError').textContent='';
-
-    document.getElementById('installationName').value='';
-    document.getElementById('installationPhone').value='';
-    document.getElementById('installationEmail').value='';
-    document.getElementById('installationProjectZip').value=savedProjectZip || '';
-    document.getElementById('installationZip').value=savedProjectZip || '';
-
-    const projectZipMsg=document.getElementById('installationProjectZipMsg');
-    if(savedProjectZip){
-      const isResidential=residentialZipPrefixes.includes(savedProjectZip.slice(0,3));
-      projectZipMsg.className=isResidential?'zipmsg ok':'zipmsg warn';
-      projectZipMsg.textContent=isResidential
-        ? '✓ We carried over the ZIP code you already entered.'
-        : 'We carried over your ZIP code and will confirm installation coverage.';
-    }else{
-      projectZipMsg.textContent='';
-    }
-
-    showInstallationStep(0);
-    installationOverlay.classList.add('open');
-    document.body.style.overflow='hidden';
-  }
-
-  function closeInstallationWizard(){
-    installationOverlay.classList.remove('open');
-    document.body.style.overflow='';
-  }
-
-  installationOverlay.addEventListener('click',event => {
-    if(event.target===installationOverlay){
-      closeInstallationWizard();
-    }
-  });
-
-  document.querySelectorAll('.installation-grass').forEach(button => {
-    button.addEventListener('click',() => {
-      document.querySelectorAll('.installation-grass').forEach(item => {
-        item.classList.remove('sel');
-      });
-
-      button.classList.add('sel');
-      installationState.grass=button.dataset.grass;
-      document.getElementById('installationGrassError').textContent='';
-    });
-  });
-
-  document.getElementById('installationProjectZip').addEventListener('input',function(){
-    const zip=this.value.trim();
-    const message=document.getElementById('installationProjectZipMsg');
-    document.getElementById('installationGrassError').textContent='';
-
-    if(!/^\d{5}$/.test(zip)){
-      message.textContent='';
-      return;
-    }
-
-    if(residentialZipPrefixes.includes(zip.slice(0,3))){
-      message.className='zipmsg ok';
-      message.textContent='✓ This appears to be in our residential installation area.';
-    }else{
-      message.className='zipmsg warn';
-      message.textContent='We’ll confirm installation coverage for this ZIP code.';
-    }
-  });
-
-  function showInstallationStep(step){
-    installationStep=step;
-
-    document.querySelectorAll('.installation-panel').forEach(panel => {
-      panel.classList.toggle(
-        'show',
-        Number(panel.dataset.installationPanel)===step
-      );
-    });
-
-    document.querySelectorAll('[data-installation-step]').forEach(marker => {
-      const markerStep=Number(marker.dataset.installationStep);
-      marker.classList.toggle('active',markerStep===step);
-      marker.classList.toggle('done',markerStep<step);
-    });
-
-    document.getElementById('installationBack').style.display=
-      step>0?'inline-flex':'none';
-
-    document.getElementById('installationNext').style.display=
-      step<INSTALLATION_MAX?'inline-flex':'none';
-
-    if(step===1){
-      updateInstallationSummary();
-    }
-  }
-
-  function installationPrev(){
-    if(installationStep>0){
-      showInstallationStep(installationStep-1);
-    }
-  }
-
-  function installationNext(){
-    if(installationStep===0){
-      const projectZip=document.getElementById('installationProjectZip').value.trim();
-
-      if(!installationState.grass){
-        document.getElementById('installationGrassError').textContent=
-          'Please choose a grass type or select “I’m not sure.”';
-        return;
-      }
-
-      if(!/^\d{5}$/.test(projectZip)){
-        document.getElementById('installationGrassError').textContent=
-          'Please enter a valid 5-digit project ZIP code.';
-        return;
-      }
-
-      if(!installationState.squareFeet){
-        document.getElementById('installationGrassError').textContent=
-          'No lawn area was found. Measure the lawn on the map or enter square footage first.';
-        return;
-      }
-
-      savedProjectZip=projectZip;
-      installationState.zip=projectZip;
-      document.getElementById('installationZip').value=projectZip;
-
-      installationState.range=
-        installationState.grass==='Not sure'
-          ? calculateInstallationRange(
-              installationState.squareFeet,
-              grassEl.options[grassEl.selectedIndex].text
-            )
-          : calculateInstallationRange(
-              installationState.squareFeet,
-              installationState.grass
-            );
-
-      showInstallationStep(1);
-      return;
-    }
-
-    if(installationStep===1){
-      if(!document.getElementById('installationAcknowledge').checked){
-        document.getElementById('installationEstimateError').textContent=
-          'Please acknowledge that this is a rough planning estimate.';
-        return;
-      }
-
-      showInstallationStep(2);
-    }
-  }
-
-  function updateInstallationSummary(){
-    document.getElementById('installationSqFt').textContent=
-      `${installationState.squareFeet.toLocaleString('en-US')} sq. ft.`;
-
-    document.getElementById('installationGrassSummary').textContent=
-      installationState.grass;
-
-    document.getElementById('installationRange').textContent=
-      installationState.range || '—';
-
-    document.getElementById('installationZipSummary').textContent=
-      installationState.zip || 'Not entered';
-  }
-
-  function emailInstallationRequest(){
-    const name=document.getElementById('installationName').value.trim();
-    const phone=document.getElementById('installationPhone').value.trim();
-    const email=document.getElementById('installationEmail').value.trim();
-    const zip=document.getElementById('installationZip').value.trim();
-    const error=document.getElementById('installationContactError');
-
-    if(!name || !phone){
-      error.textContent='Please enter your name and phone number.';
-      return;
-    }
-
-    if(email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)){
-      error.textContent='Please enter a valid email address or leave it blank.';
-      return;
-    }
-
-    if(!/^\d{5}$/.test(zip)){
-      error.textContent='Please enter a valid 5-digit project ZIP code.';
-      return;
-    }
-
-    savedProjectZip=zip;
-    installationState.zip=zip;
-    error.textContent='';
-
-    const subject='Request for free AgriScape installation quote';
-
-    const body=[
-      'AgriScape installation quote request',
-      '',
-      `Name: ${name}`,
-      `Phone: ${phone}`,
-      `Email: ${email || 'Not provided'}`,
-      `Project ZIP: ${zip}`,
-      `Approximate lawn area: ${installationState.squareFeet.toLocaleString('en-US')} sq. ft.`,
-      `Grass type: ${installationState.grass}`,
-      `Rough installed range: ${installationState.range}`,
-      '',
-      'I understand this is only a rough planning estimate.',
-      'I am requesting a free on-site measurement, consultation, and final quote.',
-      '',
-      'Final pricing may change due to access, septic or drain-field restrictions,',
-      'irrigation or utility conflicts, removal difficulty, roots, rocks, debris,',
-      'soil, grading, drainage, slopes, obstacles, hand-carry distance, disposal,',
-      'permits, HOA or site restrictions, weather, sod availability, job minimums,',
-      'delivery distance, equipment needs, and verified square footage.'
-    ].join('\n');
-
-    window.location.href=
-      `mailto:info@agriscapesod.com` +
-      `?subject=${encodeURIComponent(subject)}` +
-      `&body=${encodeURIComponent(body)}`;
-  }
-
-  // ---- DELIVERY PRICING WIZARD ----
-  const deliveryOverlay=document.getElementById('deliveryOverlay');
-  let deliveryStep=0;
-  const DELIVERY_MAX=3;
-  const deliveryState={
-    grass:'',
-    mode:'area',
-    length:0,
-    width:0,
-    squareFeet:0,
-    pallets:0,
-    zip:''
-  };
-
-  function openDeliveryWizard(){
-    const zipToReuse=savedProjectZip;
-    resetDeliveryWizard();
-
-    if(zipToReuse){
-      deliveryState.zip=zipToReuse;
-      document.getElementById('deliveryZip').value=zipToReuse;
-
-      const message=document.getElementById('deliveryZipMsg');
-      const isResidential=residentialZipPrefixes.includes(zipToReuse.slice(0,3));
-
-      message.className=isResidential?'zipmsg ok':'zipmsg warn';
-      message.textContent=isResidential
-        ? '✓ We carried over the ZIP code you already entered.'
-        : 'We carried over your ZIP code and will confirm delivery availability.';
-    }
-
-    deliveryOverlay.classList.add('open');
-    document.body.style.overflow='hidden';
-  }
-
-  function closeDeliveryWizard(){
-    deliveryOverlay.classList.remove('open');
-    document.body.style.overflow='';
-  }
-
-  deliveryOverlay.addEventListener('click', e => {
-    if(e.target===deliveryOverlay) closeDeliveryWizard();
-  });
-
-  document.addEventListener('keydown', e => {
-    if(e.key==='Escape' && deliveryOverlay.classList.contains('open')){
-      closeDeliveryWizard();
-    }
-  });
-
-  function resetDeliveryWizard(){
-    deliveryStep=0;
-    Object.assign(deliveryState,{
-      grass:'',
-      mode:'area',
-      length:0,
-      width:0,
-      squareFeet:0,
-      pallets:0,
-      zip:''
-    });
-
-    document.querySelectorAll('.delivery-choice').forEach(button => {
-      button.classList.remove('sel');
-    });
-
-    document.querySelectorAll('.quantity-choice').forEach(button => {
-      button.classList.toggle('active', button.dataset.mode==='area');
-    });
-
-    document.getElementById('deliveryAreaFields').hidden=false;
-    document.getElementById('deliveryPalletFields').hidden=true;
-
-    [
-      'deliveryLength',
-      'deliveryWidth',
-      'deliveryPallets',
-      'deliveryZip',
-      'deliveryName',
-      'deliveryPhone',
-      'deliveryEmail'
-    ].forEach(id => {
-      document.getElementById(id).value='';
-    });
-
-    document.getElementById('deliveryGrassError').textContent='';
-    document.getElementById('deliveryQuantityError').textContent='';
-    document.getElementById('deliveryZipError').textContent='';
-    document.getElementById('deliveryContactError').textContent='';
-    document.getElementById('deliveryZipMsg').textContent='';
-    document.getElementById('deliveryResult').textContent=
-      'Enter your dimensions to calculate the number of pallets.';
-
-    document.getElementById('deliveryBody').style.display='';
-    document.getElementById('deliverySteps').style.display='';
-    document.getElementById('deliveryFoot').style.display='';
-    document.getElementById('deliverySuccess').style.display='none';
-
-    showDeliveryStep(0);
-  }
-
-  document.querySelectorAll('.delivery-choice').forEach(button => {
-    button.addEventListener('click', () => {
-      document.querySelectorAll('.delivery-choice').forEach(item => {
-        item.classList.remove('sel');
-      });
-      button.classList.add('sel');
-      deliveryState.grass=button.dataset.grass;
-      document.getElementById('deliveryGrassError').textContent='';
-    });
-  });
-
-  document.querySelectorAll('.quantity-choice').forEach(button => {
-    button.addEventListener('click', () => {
-      document.querySelectorAll('.quantity-choice').forEach(item => {
-        item.classList.remove('active');
-      });
-      button.classList.add('active');
-      deliveryState.mode=button.dataset.mode;
-
-      document.getElementById('deliveryAreaFields').hidden=
-        deliveryState.mode!=='area';
-      document.getElementById('deliveryPalletFields').hidden=
-        deliveryState.mode!=='pallets';
-
-      document.getElementById('deliveryQuantityError').textContent='';
-      calculateDeliveryQuantity();
-    });
-  });
-
-  function calculateDeliveryQuantity(){
-    const result=document.getElementById('deliveryResult');
-
-    if(deliveryState.mode==='area'){
-      const length=Number(document.getElementById('deliveryLength').value);
-      const width=Number(document.getElementById('deliveryWidth').value);
-
-      if(length<=0 || width<=0){
-        deliveryState.length=0;
-        deliveryState.width=0;
-        deliveryState.squareFeet=0;
-        deliveryState.pallets=0;
-        result.textContent='Enter your dimensions to calculate the number of pallets.';
-        return;
-      }
-
-      const squareFeet=length*width;
-      const pallets=Math.ceil(squareFeet/400);
-
-      deliveryState.length=length;
-      deliveryState.width=width;
-      deliveryState.squareFeet=squareFeet;
-      deliveryState.pallets=pallets;
-
-      result.textContent=
-        `${squareFeet.toLocaleString()} sq. ft. requires approximately ` +
-        `${pallets} ${pallets===1?'pallet':'pallets'}.`;
-    } else {
-      const pallets=Math.ceil(Number(document.getElementById('deliveryPallets').value));
-
-      if(pallets<=0){
-        deliveryState.squareFeet=0;
-        deliveryState.pallets=0;
-        result.textContent='Enter the number of pallets you need.';
-        return;
-      }
-
-      deliveryState.pallets=pallets;
-      deliveryState.squareFeet=pallets*400;
-
-      result.textContent=
-        `${pallets} ${pallets===1?'pallet covers':'pallets cover'} approximately ` +
-        `${deliveryState.squareFeet.toLocaleString()} sq. ft.`;
-    }
-  }
-
-  ['deliveryLength','deliveryWidth','deliveryPallets'].forEach(id => {
-    document.getElementById(id).addEventListener('input', () => {
-      document.getElementById('deliveryQuantityError').textContent='';
-      calculateDeliveryQuantity();
-    });
-  });
-
-  document.getElementById('deliveryZip').addEventListener('input', function(){
-    const z=this.value.trim();
-    const msg=document.getElementById('deliveryZipMsg');
-    document.getElementById('deliveryZipError').textContent='';
-
-    if(!/^\d{5}$/.test(z)){
-      msg.textContent='';
-      return;
-    }
-
-    const p=z.slice(0,3);
-    const local=['342','341','339','340'];
-
-    if(local.includes(p)){
-      msg.className='zipmsg ok';
-      msg.textContent='✓ Great — this appears to be in our local delivery area.';
-    } else {
-      msg.className='zipmsg warn';
-      msg.textContent='We may still be able to deliver here — continue and we’ll confirm.';
-    }
-  });
-
-  function showDeliveryStep(step){
-    deliveryStep=step;
-
-    document.querySelectorAll('.delivery-panel').forEach(panel => {
-      panel.classList.toggle(
-        'show',
-        Number(panel.dataset.deliveryPanel)===step
-      );
-    });
-
-    document.querySelectorAll('[data-delivery-step]').forEach(marker => {
-      const markerStep=Number(marker.dataset.deliveryStep);
-      marker.classList.toggle('active', markerStep===step);
-      marker.classList.toggle('done', markerStep<step);
-    });
-
-    document.getElementById('deliveryBack').style.display=
-      step>0?'inline-flex':'none';
-
-    document.getElementById('deliveryNext').textContent=
-      step===DELIVERY_MAX?'Request pricing':'Continue';
-
-    if(step===DELIVERY_MAX){
-      updateDeliverySummary();
-    }
-  }
-
-  function deliveryPrev(){
-    if(deliveryStep>0) showDeliveryStep(deliveryStep-1);
-  }
-
-  function deliveryNext(){
-    if(deliveryStep===0){
-      if(!deliveryState.grass){
-        document.getElementById('deliveryGrassError').textContent=
-          'Please choose a grass type or select “I’m not sure.”';
-        return;
-      }
-    }
-
-    if(deliveryStep===1){
-      calculateDeliveryQuantity();
-      if(deliveryState.pallets<1){
-        document.getElementById('deliveryQuantityError').textContent=
-          'Please enter the lawn dimensions or number of pallets.';
-        return;
-      }
-    }
-
-    if(deliveryStep===2){
-      const zip=document.getElementById('deliveryZip').value.trim();
-      if(!/^\d{5}$/.test(zip)){
-        document.getElementById('deliveryZipError').textContent=
-          'Please enter a valid 5-digit ZIP code.';
-        return;
-      }
-      deliveryState.zip=zip;
-      savedProjectZip=zip;
-    }
-
-    if(deliveryStep===DELIVERY_MAX){
-      submitDeliveryRequest();
-      return;
-    }
-
-    showDeliveryStep(deliveryStep+1);
-  }
-
-  function updateDeliverySummary(){
-    const quantity=deliveryState.mode==='area'
-      ? `${deliveryState.squareFeet.toLocaleString()} sq. ft., approximately ${deliveryState.pallets} ${deliveryState.pallets===1?'pallet':'pallets'}`
-      : `${deliveryState.pallets} ${deliveryState.pallets===1?'pallet':'pallets'}, approximately ${deliveryState.squareFeet.toLocaleString()} sq. ft.`;
-
-    document.getElementById('deliverySummary').innerHTML=
-      `<strong>Delivery request</strong><br>` +
-      `Grass: ${deliveryState.grass}<br>` +
-      `Quantity: ${quantity}<br>` +
-      `Delivery ZIP: ${deliveryState.zip}`;
-  }
-
-  function submitDeliveryRequest(){
-    const name=document.getElementById('deliveryName').value.trim();
-    const phone=document.getElementById('deliveryPhone').value.trim();
-    const email=document.getElementById('deliveryEmail').value.trim();
-    const error=document.getElementById('deliveryContactError');
-
-    if(!name || !phone){
-      error.textContent='Please enter your name and phone number.';
-      return;
-    }
-
-    if(email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)){
-      error.textContent='Please enter a valid email address or leave it blank.';
-      return;
-    }
-
-    const request={
-      ...deliveryState,
-      name,
-      phone,
-      email
-    };
-
-    console.log('Delivery pricing request:', request);
-
-    /*
-      PRODUCTION:
-      Replace the console.log above with your form handler, CRM endpoint,
-      server-side PHP form, or email service. This front-end version collects
-      and validates the request but does not send it anywhere yet.
-    */
-
-    document.getElementById('deliveryBody').style.display='none';
-    document.getElementById('deliverySteps').style.display='none';
-    document.getElementById('deliveryFoot').style.display='none';
-    document.getElementById('deliverySuccess').style.display='block';
-  }
-
   // ---- ACTION WIDGET ----
-  const fabPanel=document.getElementById('fabPanel');
-  function toggleFab(){ fabPanel.classList.toggle('open'); }
+  const fabPanel = document.getElementById('fabPanel');
+  function toggleFab() { fabPanel.classList.toggle('open'); }
 
-  // ---- COOKIE CONSENT (Consent Mode v2 scaffold) ----
+  // ---- COOKIE CONSENT ----
   function getCookie(k){ try{ return document.cookie.split('; ').find(r=>r.startsWith(k+'='))?.split('=')[1]; }catch(e){ return null; } }
   function setCookie(k,v){ try{ document.cookie=k+'='+v+';path=/;max-age=15552000;SameSite=Lax'; }catch(e){} }
   function showCookie(){ if(!getCookie('asod_consent')) document.getElementById('cookie').classList.add('show'); }
   function hideCookie(){ document.getElementById('cookie').classList.remove('show'); }
-  function grantConsent(){
-    setCookie('asod_consent','granted'); hideCookie();
-    /* >>> if (window.gtag) gtag('consent','update',{
-         ad_storage:'granted', analytics_storage:'granted',
-         ad_user_data:'granted', ad_personalization:'granted' }); */
-  }
-  function denyConsent(){
-    setCookie('asod_consent','denied'); hideCookie();
-    /* >>> if (window.gtag) gtag('consent','update',{
-         ad_storage:'denied', analytics_storage:'denied' }); */
-  }
+  function grantConsent(){ setCookie('asod_consent','granted'); hideCookie(); }
+  function denyConsent(){ setCookie('asod_consent','denied'); hideCookie(); }
   showCookie();
 
   // ---- LIVE GOOGLE REVIEWS ----
-  // Reads google-reviews.php (which calls the Google Places API on your cPanel
-  // server). If it isn't set up yet, the placeholders below just stay put.
   (function(){
     function esc(s){ return (s||'').replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c])); }
     fetch('google-reviews.php').then(r => r.json()).then(d => {
-      if(!d || d.error) return;                       // not configured yet -> keep placeholders
+      if(!d || d.error) return;
       if(d.rating){
         const f = Math.round(d.rating);
-        document.getElementById('gRate').textContent  = d.rating.toFixed(1);
+        document.getElementById('gRate').textContent = d.rating.toFixed(1);
         document.getElementById('gStars').textContent = '★'.repeat(f) + '☆'.repeat(5-f);
       }
-      if(d.total){
-        document.getElementById('gCount').textContent = 'Based on ' + Number(d.total).toLocaleString() + ' Google reviews';
-      }
+      if(d.total){ document.getElementById('gCount').textContent = 'Based on ' + Number(d.total).toLocaleString() + ' Google reviews'; }
       if(d.reviews && d.reviews.length){
         const grid = document.getElementById('reviewsGrid');
         grid.innerHTML = d.reviews.slice(0,3).map(rv => {
-          const rt = Math.round(rv.rating || 5);
-          const stars = '★'.repeat(rt) + '☆'.repeat(5-rt);
-          let t = rv.text || '';
-          if(t.length > 200) t = t.slice(0,200) + '…';
-          return '<div class="review"><div class="stars">'+stars+'</div><p>'+esc(t)+
-                 '</p><div class="who">'+esc(rv.author)+'<small>'+esc(rv.time)+' · Google</small></div></div>';
+          const rt = Math.round(rv.rating||5);
+          const stars = '★'.repeat(rt)+'☆'.repeat(5-rt);
+          let t = rv.text||''; if(t.length>200) t=t.slice(0,200)+'…';
+          return '<div class="review"><div class="stars">'+stars+'</div><p>'+esc(t)+'</p><div class="who">'+esc(rv.author)+'<small>'+esc(rv.time)+' · Google</small></div></div>';
         }).join('');
         const note = document.getElementById('reviewsNote'); if(note) note.style.display='none';
       }
-    }).catch(() => {});   // offline / not set up -> placeholders remain
+    }).catch(() => {});
   })();
+
+  // ---- (old duplicate code removed) ----
 </script>
 </body>
 </html>
